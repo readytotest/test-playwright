@@ -1,7 +1,6 @@
 //First sample test with Playwright
 const { test } = require('@playwright/test');
 import { IndexHtmPage } from "../pages/index-htm-page";
-import { testIdGenerator } from "../scripts/testIdGenerator";
 
 //Run the test 10 times
 for (let i = 0; i <= 9; i++) {
