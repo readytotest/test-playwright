@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "clearreportfolder": "rm -r test-results && mkdir test-results"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
