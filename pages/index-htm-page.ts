@@ -1,6 +1,7 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 import { feedbackWidgetInfo } from "../test-data/feedbackWidgetData.json";
 import { faker } from '@faker-js/faker/locale/en_US';
+import { testIdGenerator } from '../scripts/testIdGenerator';
 const feedbackWidgetFullName = faker.person.fullName();
 
 export class IndexHtmPage {
@@ -65,7 +66,7 @@ export class IndexHtmPage {
 
    //Fill in message field
    async fillFeedbackWidgetMessageField() {
-    await this.feedbackWidgetMessageField.fill(feedbackWidgetInfo.message);
+    await this.feedbackWidgetMessageField.fill(`${feedbackWidgetInfo.message} TestID:${testIdGenerator}`);
     }
 
     //Click Send Now button
@@ -75,6 +76,7 @@ export class IndexHtmPage {
 
     //Verify form submitted
     async verifyFeedbackWidgetMessageSent() {
+      await this.page.waitForTimeout(1000);
       expect(this.feedbackWidgetSuccessMessage).toContainText('message sent successfully!', { ignoreCase: true });
      }
 
