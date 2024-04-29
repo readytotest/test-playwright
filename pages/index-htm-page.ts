@@ -2,7 +2,7 @@ import { expect, type Locator, type Page } from '@playwright/test';
 import { feedbackWidgetInfo } from "../test-data/feedbackWidgetData.json";
 import { faker } from '@faker-js/faker/locale/en_US';
 import { testIdGenerator } from '../scripts/testIdGenerator';
-const feedbackWidgetFullName = faker.person.fullName();
+const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 
 export class IndexHtmPage {
   readonly page: Page;
@@ -56,7 +56,7 @@ export class IndexHtmPage {
 
   //Fill in name field
   async fillFeedbackWidgetNameField() {
-    await this.feedbackWidgetNameField.fill(feedbackWidgetFullName);
+    await this.feedbackWidgetNameField.fill(feedbackWidgetInfo.fullName);
     }
 
    //Fill in email field
@@ -66,7 +66,7 @@ export class IndexHtmPage {
 
    //Fill in message field
    async fillFeedbackWidgetMessageField() {
-    await this.feedbackWidgetMessageField.fill(`${feedbackWidgetInfo.message} TestID:${testIdGenerator}`);
+    await this.feedbackWidgetMessageField.fill(`${feedbackWidgetInfo.message} ${feedbackWidgetLoremIpsum} TestID:${testIdGenerator}`);
     }
 
     //Click Send Now button
