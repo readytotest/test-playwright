@@ -1,5 +1,5 @@
 //First sample test with Playwright
-import { test, Page } from "@playwright/test";
+import { test } from "@playwright/test";
 import { IndexHtmPage } from "@pages/index-htm-page";
 let indexHtmPage: IndexHtmPage; 
 
@@ -7,7 +7,7 @@ let indexHtmPage: IndexHtmPage;
 for (let i = 0; i <= 9; i++) {
 test.describe('My personal home page test suite', () => {
     
-  test.beforeEach(async ({ page }: { page: Page }) => {
+  test.beforeEach(async ({ page }) => {
     console.log(`Running ${test.info().title}`);
     indexHtmPage = new IndexHtmPage(page);
     await indexHtmPage.goto();
