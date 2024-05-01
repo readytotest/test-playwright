@@ -12,6 +12,8 @@ test.describe('My personal home page test suite', () => {
     indexHtmPage = new IndexHtmPage(page);
     await indexHtmPage.goto();
   });
+
+//Below are a 3 very short tests, will combine these into a single test sometime later
   
 test(`website title run:${i}`, async ({ page }) => {
   //Verify title of index.htm
