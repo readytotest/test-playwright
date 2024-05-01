@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "resolveJsonModule": true,
+      "baseUrl": ".",
+      "paths": {
+        "@scripts/*": ["scripts/*"],
+        "@test-data/*": ["test-data/*"]
+      },
+      "module": "commonjs",
+      "target": "es6",
+      "strict": true,
+      "esModuleInterop": true
+    },
+    
+  }
