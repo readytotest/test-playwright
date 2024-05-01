@@ -1,14 +1,14 @@
 import { expect, type Locator, type Page } from '@playwright/test';
-import { feedbackWidgetInfo } from "../test-data/feedbackWidgetData.json";
+import { feedbackWidgetInfo } from "@test-data/feedbackWidgetData.json";
 import { faker } from '@faker-js/faker/locale/en_US';
-import { testIdGenerator } from '../scripts/testIdGenerator';
+import { testIdGenerator } from '@scripts/testIdGenerator';
+import { goToThisWebsiteUrl } from '@scripts/navigation';
 const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 
 export class IndexHtmPage {
   readonly page: Page;
   readonly weatherAlertLink: Locator;
   readonly weatherAlertPageCopy: Locator;
-  readonly backLinkOnWeatherPage: Locator;
   readonly feedbackWidget: Locator;
   readonly feedbackWidgetNameField: Locator;
   readonly feedbackWidgetEmailField: Locator;
@@ -31,7 +31,7 @@ export class IndexHtmPage {
 
   //Navigate to index.htm page
   async goto() {
-    await this.page.goto('https://readytotest.github.io');
+    await goToThisWebsiteUrl(this.page);
   }
 
   //Verify page title is as expected
