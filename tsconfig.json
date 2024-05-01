@@ -4,7 +4,8 @@
       "baseUrl": ".",
       "paths": {
         "@scripts/*": ["scripts/*"],
-        "@test-data/*": ["test-data/*"]
+        "@test-data/*": ["test-data/*"],
+        "@pages/*": ["pages/*"]
       },
       "module": "commonjs",
       "target": "es6",

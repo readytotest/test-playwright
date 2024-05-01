@@ -1,6 +1,6 @@
 //First sample test with Playwright
 import { test, Page } from "@playwright/test";
-import { IndexHtmPage } from "../pages/index-htm-page";
+import { IndexHtmPage } from "@pages/index-htm-page";
 let indexHtmPage: IndexHtmPage; 
 
 //Run the test 10 times
