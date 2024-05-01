@@ -1,13 +1,13 @@
 //First sample test with Playwright
-const { test } = require('@playwright/test');
+import { test, Page } from "@playwright/test";
 import { IndexHtmPage } from "../pages/index-htm-page";
+let indexHtmPage: IndexHtmPage; 
 
 //Run the test 10 times
 for (let i = 0; i <= 9; i++) {
 test.describe('My personal home page test suite', () => {
-  let indexHtmPage; 
-  
-  test.beforeEach(async ({ page }) => {
+    
+  test.beforeEach(async ({ page }: { page: Page }) => {
     console.log(`Running ${test.info().title}`);
     indexHtmPage = new IndexHtmPage(page);
     await indexHtmPage.goto();
