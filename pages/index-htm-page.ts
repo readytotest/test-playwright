@@ -41,7 +41,7 @@ export class IndexHtmPage {
     await expect(this.page).toHaveTitle('Ready to Test (QA)');
   }
 
-  //Verify page title is as expected
+  //Verify page copy is as expected
   async verifyIndexPageCopyIntro() {
     await expect(this.indexPageCopyIntro).toHaveText('Welcome to my testing laboratory!');
   }
