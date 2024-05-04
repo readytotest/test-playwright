@@ -12,8 +12,6 @@ test.describe('My personal home page test suite', () => {
     indexHtmPage = new IndexHtmPage(page);
     await indexHtmPage.goto();
   });
-
-//Below are a 3 very short tests, will combine these into a single test sometime later
   
 test(`website title run:${i}`, async ({ page }) => {
   //Verify title of index.htm
@@ -22,7 +20,7 @@ test(`website title run:${i}`, async ({ page }) => {
 
 
 test(`weather api run:${i}`, async ({ page }) => {
-  //Go to weather alert page
+  //From index htm, navigate to weather alert page
   await indexHtmPage.clickWeatherAlertLink();
   //Expects page to display weather alerts for California
   await indexHtmPage.verifyWeatherAlertIsCalifornia();
