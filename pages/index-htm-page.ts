@@ -2,7 +2,7 @@ import { expect, type Locator, type Page } from '@playwright/test';
 import { feedbackWidgetInfo } from "@test-data/feedbackWidgetData.json";
 import { faker } from '@faker-js/faker/locale/en_US';
 import { testIdGenerator } from '@scripts/testIdGenerator';
-import { goToThisWebsiteUrl } from '@scripts/navigation';
+import { goToIndexHtm } from '@scripts/navigation';
 const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 
 export class IndexHtmPage {
@@ -31,7 +31,7 @@ export class IndexHtmPage {
 
   //Navigate to index.htm page
   async goto() {
-    await goToThisWebsiteUrl(this.page);
+    await goToIndexHtm(this.page);
   }
 
   //Verify page title is as expected
