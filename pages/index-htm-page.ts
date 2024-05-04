@@ -15,6 +15,7 @@ export class IndexHtmPage {
   readonly feedbackWidgetMessageField: Locator;
   readonly feedbackWidgetSendNowButton: Locator;
   readonly feedbackWidgetSuccessMessage: Locator;
+  readonly pageCopyIntro: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -26,6 +27,7 @@ export class IndexHtmPage {
     this.feedbackWidgetMessageField = page.locator('[id="message"]');
     this.feedbackWidgetSendNowButton = page.getByLabel('Send Now!');
     this.feedbackWidgetSuccessMessage = page.locator('.success-message');
+    this.pageCopyIntro = page.locator('[data-testid="intro-page-copy"]');
 
   }
 
@@ -39,15 +41,15 @@ export class IndexHtmPage {
     await expect(this.page).toHaveTitle('Ready to Test (QA)');
   }
 
+  //Verify page title is as expected
+  async verifyIntroPageCopy() {
+    await expect(this.weatherAlertPageCopy).toHaveText('Welcome to my testing laboratory!');
+  }
+
   //Click link to weather alert page
   async clickWeatherAlertLink() {
      await this.weatherAlertLink.click();
    }
-
-   //Verify we are displaying alerts for California
-  async verifyWeatherAlertIsCalifornia() {
-    await expect(this.weatherAlertPageCopy).toHaveText('current watches, warnings, and advisories for california', { ignoreCase: true });
-  }
 
   //Click on feedback widget
   async clickFeedbackWidget() {
