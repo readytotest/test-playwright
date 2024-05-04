@@ -15,7 +15,7 @@ export class IndexHtmPage {
   readonly feedbackWidgetMessageField: Locator;
   readonly feedbackWidgetSendNowButton: Locator;
   readonly feedbackWidgetSuccessMessage: Locator;
-  readonly pageCopyIntro: Locator;
+  readonly indexPageCopyIntro: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -27,7 +27,7 @@ export class IndexHtmPage {
     this.feedbackWidgetMessageField = page.locator('[id="message"]');
     this.feedbackWidgetSendNowButton = page.getByLabel('Send Now!');
     this.feedbackWidgetSuccessMessage = page.locator('.success-message');
-    this.pageCopyIntro = page.locator('[data-testid="intro-page-copy"]');
+    this.indexPageCopyIntro = page.locator('[data-testid="intro-page-copy"]');
 
   }
 
@@ -42,8 +42,8 @@ export class IndexHtmPage {
   }
 
   //Verify page title is as expected
-  async verifyIntroPageCopy() {
-    await expect(this.weatherAlertPageCopy).toHaveText('Welcome to my testing laboratory!');
+  async verifyIndexPageCopyIntro() {
+    await expect(this.indexPageCopyIntro).toHaveText('Welcome to my testing laboratory!');
   }
 
   //Click link to weather alert page

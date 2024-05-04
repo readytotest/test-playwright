@@ -19,6 +19,9 @@ test.describe('My personal home page test suite', () => {
 test(`index htm page run:${i}`, async ({ page }) => {
   //Verify title of index.htm
   await indexHtmPage.verifyPageTitle();
+
+  //Verify index htm page copy
+  await indexHtmPage.verifyIndexPageCopyIntro();
   
   //Open the feedback widget
   await indexHtmPage.clickFeedbackWidget();
