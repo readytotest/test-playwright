@@ -21,6 +21,9 @@ test(`page copy run:${i}`, async ({ page }) => {
 
 });
 
+//Avoid testing third-party dependencies
+//I know I'm violating best practice here, by testing Sentry's feedback widget but this is all about learning
+//and exploration, so I'm disregarding best practice!
 test(`feedback widget run:${i}`, async ({ page }) => {
   //Open the feedback widget
   await indexHtmPage.clickFeedbackWidget();
