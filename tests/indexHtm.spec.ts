@@ -12,13 +12,16 @@ test.describe('Test the index htm page', () => {
     await indexHtmPage.goto();
   });
   
-test(`index htm page run:${i}`, async ({ page }) => {
+test(`page copy run:${i}`, async ({ page }) => {
   //Verify title of index.htm
   await indexHtmPage.verifyPageTitle();
 
   //Verify index htm page copy
   await indexHtmPage.verifyIndexPageCopyIntro();
-  
+
+});
+
+test(`feedback widget:${i}`, async ({ page }) => {
   //Open the feedback widget
   await indexHtmPage.clickFeedbackWidget();
   //Fill in name field
@@ -31,6 +34,7 @@ test(`index htm page run:${i}`, async ({ page }) => {
   await indexHtmPage.clickFeedbackWidgetSendNowButton();
   //Verify message sent successfully
   await indexHtmPage.verifyFeedbackWidgetMessageSent();
+  
 });
 
 

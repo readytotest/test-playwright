@@ -25,6 +25,5 @@ test(`weather alert page run:${i}`, async ({ page }) => {
     await weatherAlertPage.verifyWeatherAlertIsCalifornia();
   });
   
-  
   });
   }
