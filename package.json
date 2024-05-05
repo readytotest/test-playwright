@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clearreportfolder": "rm -r test-results && mkdir test-results"
+    "clearreportfolder": "rm -r test-results && mkdir test-results",
+    "startlocaltest": "node server.js & sleep 5 && npx playwright test --match tests/**/*.spec.ts"
   },
   "keywords": [],
   "author": "",
