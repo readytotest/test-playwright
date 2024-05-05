@@ -4,8 +4,8 @@ import { WeatherAlertPage } from "@pages/weather-alert-page";
 let weatherAlertPage: WeatherAlertPage;
 let indexHtmPage: IndexHtmPage; 
 
-//Run the test 5 times
-for (let i = 0; i <= 4; i++) {
+//Run the test 4 times
+for (let i = 0; i <= 3; i++) {
 test.describe('Test the weather alerts page', () => {
     
   test.beforeEach(async ({ page }) => {

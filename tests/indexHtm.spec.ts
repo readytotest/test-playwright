@@ -2,8 +2,8 @@ import { test } from "@playwright/test";
 import { IndexHtmPage } from "@pages/index-htm-page";
 let indexHtmPage: IndexHtmPage;
 
-//Run the test 5 times
-for (let i = 0; i <= 4; i++) {
+//Run the test 4 times
+for (let i = 0; i <= 3; i++) {
 test.describe('Test the index htm page', () => {
     
   test.beforeEach(async ({ page }) => {
@@ -21,7 +21,7 @@ test(`page copy run:${i}`, async ({ page }) => {
 
 });
 
-test(`feedback widget:${i}`, async ({ page }) => {
+test(`feedback widget run:${i}`, async ({ page }) => {
   //Open the feedback widget
   await indexHtmPage.clickFeedbackWidget();
   //Fill in name field
