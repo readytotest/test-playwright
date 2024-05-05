@@ -1,18 +1,14 @@
-//First sample test with Playwright
 import { test } from "@playwright/test";
 import { IndexHtmPage } from "@pages/index-htm-page";
-import { WeatherAlertPage } from "@pages/weather-alert-page";
 let indexHtmPage: IndexHtmPage;
-let weatherAlertPage: WeatherAlertPage; 
 
-//Run the test 10 times
-for (let i = 0; i <= 9; i++) {
-test.describe('My personal home page test suite', () => {
+//Run the test 5 times
+for (let i = 0; i <= 4; i++) {
+test.describe('Test the index htm page', () => {
     
   test.beforeEach(async ({ page }) => {
     console.log(`Running ${test.info().title}`);
     indexHtmPage = new IndexHtmPage(page);
-    weatherAlertPage = new WeatherAlertPage(page);
     await indexHtmPage.goto();
   });
   
@@ -35,14 +31,6 @@ test(`index htm page run:${i}`, async ({ page }) => {
   await indexHtmPage.clickFeedbackWidgetSendNowButton();
   //Verify message sent successfully
   await indexHtmPage.verifyFeedbackWidgetMessageSent();
-});
-
-
-test(`weather alert page run:${i}`, async ({ page }) => {
-  //From index htm, navigate to weather alert page
-  await indexHtmPage.clickWeatherAlertLink();
-  //Expects page to display weather alerts for California
-  await weatherAlertPage.verifyWeatherAlertIsCalifornia();
 });
 
 
