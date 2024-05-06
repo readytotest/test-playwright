@@ -13,9 +13,12 @@ The scripts in this repository are designed to be executed within a GitHub Actio
 
 ## Usage
 
-The main entry point for the Playwright scripts is located in `scripts/navigation.ts`. By default, these scripts are configured to interact with a local server running at `http://localhost:3000`. However, since there is no server script included in this Playwright repository, the tests will fail if you try to run them on your computer unless the URL is changed to point to the live site.
+The main entry point for the Playwright scripts is located in `scripts/navigation.ts`. By default, these scripts are configured to interact with a local server running at `http://localhost:3000`. 
 
-To run these tests against the live site hosted on GitHub Pages (`https://readytotest.github.io`), simply replace `http://localhost:3000` with `https://readytotest.github.io` in the script.
+<b>NOTE!</b> If you try to run these scripts on your computer they will fail because there is no local server running
+and the files for the website exist in a different repo. If you want to run these tests, you must replace 
+`http://localhost:3000` with `https://readytotest.github.io` in the script. This will allow you to run these tests
+against the live site.
 
 ## Contributions
 
