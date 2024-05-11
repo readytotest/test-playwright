@@ -6,7 +6,7 @@ This project was created to explore Playwright and compare its capabilities with
 
 ## Workflow
 
-The scripts in this repository are designed to be executed within a GitHub Actions workflow that resides in my main repository (readytotest.github.io). When a pull request or commit occurs in the main repository, the following workflow is triggered:
+The scripts in this repository are designed to be executed within a [GitHub Actions workflow](https://github.com/readytotest/readytotest.github.io/blob/main/.github/workflows/playwright-mysite.yml) that resides in my main repository. When a pull request or commit occurs in the main repository, the following workflow is triggered:
 
 1. A local Node.js server is started within the GitHub runner environment.
 2. Playwright scripts, located in this repository, execute tests against the locally hosted web application.
