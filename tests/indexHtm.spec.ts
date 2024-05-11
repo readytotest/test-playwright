@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import { IndexHtmPage } from "@pages/index-htm-page";
+import { IndexHtmPage } from "@pages/indexHtmPage";
 import { faker } from '@faker-js/faker/locale/en_US';
 import { testIdGenerator } from '@scripts/testIdGenerator';
 import { feedbackWidgetData, indexHtmData } from "@test-data/testData.json";

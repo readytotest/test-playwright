@@ -1,6 +1,6 @@
 import { test } from "@playwright/test";
-import { IndexHtmPage } from "@pages/index-htm-page";
-import { WeatherAlertPage } from "@pages/weather-alert-page";
+import { IndexHtmPage } from "@pages/indexHtmPage";
+import { WeatherAlertPage } from "@pages/weatherAlertPage";
 import { weatherAlertData } from "@test-data/testData.json";
 let weatherAlertPage: WeatherAlertPage;
 let indexHtmPage: IndexHtmPage; 
