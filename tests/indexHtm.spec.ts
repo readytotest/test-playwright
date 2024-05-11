@@ -1,5 +1,9 @@
 import { test } from "@playwright/test";
 import { IndexHtmPage } from "@pages/index-htm-page";
+import { faker } from '@faker-js/faker/locale/en_US';
+import { testIdGenerator } from '@scripts/testIdGenerator';
+import { feedbackWidgetData, indexHtmData } from "@test-data/testData.json";
+const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 let indexHtmPage: IndexHtmPage;
 
 //Run the test 4 times
@@ -14,10 +18,10 @@ test.describe('Test the index htm page', () => {
   
 test(`page copy run:${i}`, async ({ page }) => {
   //Verify title of index.htm
-  await indexHtmPage.verifyPageTitle();
+  await indexHtmPage.verifyPageTitle(indexHtmData.pageTitle);
 
   //Verify index htm page copy
-  await indexHtmPage.verifyIndexPageCopyIntro();
+  await indexHtmPage.verifyIndexPageCopyIntro(indexHtmData.pageCopy);
 
 });
 
@@ -28,15 +32,15 @@ test(`feedback widget run:${i}`, async ({ page }) => {
   //Open the feedback widget
   await indexHtmPage.clickFeedbackWidget();
   //Fill in name field
-  await indexHtmPage.fillFeedbackWidgetNameField();
+  await indexHtmPage.fillFeedbackWidgetNameField(feedbackWidgetData.fullName);
   //Fill in email field
-  await indexHtmPage.fillFeedbackWidgetEmailField();
+  await indexHtmPage.fillFeedbackWidgetEmailField(feedbackWidgetData.email);
   //Fill in message field
-  await indexHtmPage.fillFeedbackWidgetMessageField();
+  await indexHtmPage.fillFeedbackWidgetMessageField(`${feedbackWidgetData.message} ${feedbackWidgetLoremIpsum} TestID:${testIdGenerator}`);
   //Click Send Now button
   await indexHtmPage.clickFeedbackWidgetSendNowButton();
   //Verify message sent successfully
-  await indexHtmPage.verifyFeedbackWidgetMessageSent();
+  await indexHtmPage.verifyFeedbackWidgetMessageSent(feedbackWidgetData.confirmMessageSent, { ignoreCase: true });
   
 });
 

@@ -1,6 +1,7 @@
 import { test } from "@playwright/test";
 import { IndexHtmPage } from "@pages/index-htm-page";
 import { WeatherAlertPage } from "@pages/weather-alert-page";
+import { weatherAlertData } from "@test-data/testData.json";
 let weatherAlertPage: WeatherAlertPage;
 let indexHtmPage: IndexHtmPage; 
 
@@ -22,7 +23,7 @@ test(`weather alert page run:${i}`, async ({ page }) => {
     //From index htm, navigate to weather alert page
     await indexHtmPage.clickWeatherAlertLink();
     //Expects page to display weather alerts for California
-    await weatherAlertPage.verifyWeatherAlertIsCalifornia();
+    await weatherAlertPage.verifyWeatherAlertIsCalifornia(weatherAlertData.alertTitle, { ignoreCase: true });
   });
   
   });

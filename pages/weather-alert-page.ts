@@ -10,8 +10,8 @@ export class WeatherAlertPage {
   }
 
   //Verify we are displaying alerts for California
-  async verifyWeatherAlertIsCalifornia() {
-    await expect(this.weatherAlertPageCopy).toHaveText('current watches, warnings, and advisories for california', { ignoreCase: true });
+  async verifyWeatherAlertIsCalifornia(weatherAlertCalifornia: string, options: { ignoreCase: boolean }) {
+    await expect(this.weatherAlertPageCopy).toHaveText(weatherAlertCalifornia, options);
   }
 
 }

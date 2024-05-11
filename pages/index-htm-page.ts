@@ -1,9 +1,5 @@
 import { expect, type Locator, type Page } from '@playwright/test';
-import { feedbackWidgetInfo } from "@test-data/feedbackWidgetData.json";
-import { faker } from '@faker-js/faker/locale/en_US';
-import { testIdGenerator } from '@scripts/testIdGenerator';
 import { goToIndexHtm } from '@scripts/navigation';
-const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 
 export class IndexHtmPage {
   readonly page: Page;
@@ -37,13 +33,13 @@ export class IndexHtmPage {
   }
 
   //Verify page title is as expected
-  async verifyPageTitle() {
-    await expect(this.page).toHaveTitle('Ready to Test (QA)');
+  async verifyPageTitle(pageTitle: string) {
+    await expect(this.page).toHaveTitle(pageTitle);
   }
 
   //Verify page copy is as expected
-  async verifyIndexPageCopyIntro() {
-    await expect(this.indexPageCopyIntro).toHaveText('Welcome to my testing laboratory!');
+  async verifyIndexPageCopyIntro(indexPageCopy: string) {
+    await expect(this.indexPageCopyIntro).toHaveText(indexPageCopy);
   }
 
   //Click link to weather alert page
@@ -57,18 +53,18 @@ export class IndexHtmPage {
     }
 
   //Fill in name field
-  async fillFeedbackWidgetNameField() {
-    await this.feedbackWidgetNameField.fill(feedbackWidgetInfo.fullName);
+  async fillFeedbackWidgetNameField(widgetNameField: string) {
+    await this.feedbackWidgetNameField.fill(widgetNameField);
     }
 
    //Fill in email field
-   async fillFeedbackWidgetEmailField() {
-    await this.feedbackWidgetEmailField.fill(feedbackWidgetInfo.email);
+   async fillFeedbackWidgetEmailField(widgetEmailField: string) {
+    await this.feedbackWidgetEmailField.fill(widgetEmailField);
     }
 
    //Fill in message field
-   async fillFeedbackWidgetMessageField() {
-    await this.feedbackWidgetMessageField.fill(`${feedbackWidgetInfo.message} ${feedbackWidgetLoremIpsum} TestID:${testIdGenerator}`);
+   async fillFeedbackWidgetMessageField(widgetMessageField: string) {
+    await this.feedbackWidgetMessageField.fill(widgetMessageField);
     }
 
     //Click Send Now button
@@ -77,9 +73,9 @@ export class IndexHtmPage {
     }
 
     //Verify form submitted
-    async verifyFeedbackWidgetMessageSent() {
+    async verifyFeedbackWidgetMessageSent(widgetMessageSent: string, options: { ignoreCase: boolean } ) {
       await this.page.waitForTimeout(1000);
-      expect(this.feedbackWidgetSuccessMessage).toContainText('message sent successfully!', { ignoreCase: true });
+      expect(this.feedbackWidgetSuccessMessage).toContainText(widgetMessageSent, options);
      }
 
 }
