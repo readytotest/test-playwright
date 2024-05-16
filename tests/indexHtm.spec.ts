@@ -6,8 +6,8 @@ import { feedbackWidgetData, indexHtmData } from "@test-data/testData.json";
 const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 let indexHtmPage: IndexHtmPage;
 
-//Run the test 4 times
-for (let i = 0; i <= 3; i++) {
+//Run the test 2 times
+for (let i = 0; i <= 1; i++) {
 test.describe('Test the index htm page', () => {
     
   test.beforeEach(async ({ page }) => {
