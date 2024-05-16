@@ -1,59 +1,50 @@
 //Tinkering with writing this as a function Vs a class
 
-import { expect, type Locator, type Page } from '@playwright/test';
+import { expect, Locator, Page } from '@playwright/test';
 import { goToIndexHtm } from '@scripts/navigation';
 
-export function indexHtmPageFunction(page: Page) {
-  const weatherAlertLink = page.locator('a', { hasText: 'View weather alerts on my page' });
-  const weatherAlertPageCopy = page.locator('weather-title');
-  const feedbackWidget = page.locator('[class="widget__actor__text"]');
-  const feedbackWidgetNameField = page.locator('[id="name"]');
-  const feedbackWidgetEmailField = page.locator('[id="email"]');
-  const feedbackWidgetMessageField = page.locator('[id="message"]');
-  const feedbackWidgetSendNowButton = page.getByLabel('Send Now!');
-  const feedbackWidgetSuccessMessage = page.locator('.success-message');
-  const indexPageCopyIntro = page.locator('[data-testid="intro-page-copy"]');
+export const indexHtmPageFunction = (page: Page) => {
 
-  async function goto() {
+  const goto = async () => {
     await goToIndexHtm(page);
-  }
+  };
 
-  async function verifyPageTitle(pageTitle: string) {
+  const verifyPageTitle = async (pageTitle: string) => {
     await expect(page).toHaveTitle(pageTitle);
-  }
+  };
 
-  async function verifyIndexPageCopyIntro(indexPageCopy: string) {
-    await expect(indexPageCopyIntro).toHaveText(indexPageCopy);
-  }
+  const verifyIndexPageCopyIntro = async (indexPageCopy: string) => {
+    await expect(page.locator('[data-testid="intro-page-copy"]')).toHaveText(indexPageCopy);
+  };
 
-  async function clickWeatherAlertLink() {
-     await weatherAlertLink.click();
-   }
+  const clickWeatherAlertLink = async () => {
+    await page.locator('a', { hasText: 'View weather alerts on my page' }).click();
+  };
 
-  async function clickFeedbackWidget() {
-    await feedbackWidget.click();
-  }
+  const clickFeedbackWidget = async () => {
+    await page.locator('[class="widget__actor__text"]').click();
+  };
 
-  async function fillFeedbackWidgetNameField(widgetNameField: string) {
-    await feedbackWidgetNameField.fill(widgetNameField);
-  }
+  const fillFeedbackWidgetNameField = async (widgetNameField: string) => {
+    await page.locator('[id="name"]').fill(widgetNameField);
+  };
 
-  async function fillFeedbackWidgetEmailField(widgetEmailField: string) {
-    await feedbackWidgetEmailField.fill(widgetEmailField);
-  }
+  const fillFeedbackWidgetEmailField = async (widgetEmailField: string) => {
+    await page.locator('[id="email"]').fill(widgetEmailField);
+  };
 
-  async function fillFeedbackWidgetMessageField(widgetMessageField: string) {
-    await feedbackWidgetMessageField.fill(widgetMessageField);
-  }
+  const fillFeedbackWidgetMessageField = async (widgetMessageField: string) => {
+    await page.locator('[id="message"]').fill(widgetMessageField);
+  };
 
-  async function clickFeedbackWidgetSendNowButton() {
-     await feedbackWidgetSendNowButton.click();
-  }
+  const clickFeedbackWidgetSendNowButton = async () => {
+    await page.getByLabel('Send Now!').click();
+  };
 
-  async function verifyFeedbackWidgetMessageSent(widgetMessageSent: string, options: { ignoreCase: boolean } ) {
+  const verifyFeedbackWidgetMessageSent = async (widgetMessageSent: string, options: { ignoreCase: boolean } ) => {
     await page.waitForTimeout(1000);
-    expect(feedbackWidgetSuccessMessage).toContainText(widgetMessageSent, options);
-  }
+    expect(page.locator('.success-message')).toContainText(widgetMessageSent, options);
+  };
 
   return {
     goto,
@@ -67,6 +58,4 @@ export function indexHtmPageFunction(page: Page) {
     clickFeedbackWidgetSendNowButton,
     verifyFeedbackWidgetMessageSent
   };
-}
-
-module.exports = { indexHtmPageFunction };
+};
