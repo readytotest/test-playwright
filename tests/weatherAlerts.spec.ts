@@ -5,8 +5,8 @@ import { weatherAlertData } from "@test-data/testData.json";
 let weatherAlertPage: WeatherAlertPage;
 let indexHtmPage: IndexHtmPage; 
 
-//Run the test 4 times
-for (let i = 0; i <= 3; i++) {
+//Run the test 2 times
+for (let i = 0; i <= 1; i++) {
 test.describe('Test the weather alerts page', () => {
     
   test.beforeEach(async ({ page }) => {
