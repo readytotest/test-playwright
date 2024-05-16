@@ -4,7 +4,6 @@ import { goToIndexHtm } from '@scripts/navigation';
 export class IndexHtmPage {
   readonly page: Page;
   readonly weatherAlertLink: Locator;
-  readonly weatherAlertPageCopy: Locator;
   readonly feedbackWidget: Locator;
   readonly feedbackWidgetNameField: Locator;
   readonly feedbackWidgetEmailField: Locator;
@@ -16,7 +15,6 @@ export class IndexHtmPage {
   constructor(page: Page) {
     this.page = page;
     this.weatherAlertLink = page.locator('a', { hasText: 'View weather alerts on my page' });
-    this.weatherAlertPageCopy = page.locator('weather-title');
     this.feedbackWidget = page.locator('[class="widget__actor__text"]');
     this.feedbackWidgetNameField = page.locator('[id="name"]');
     this.feedbackWidgetEmailField = page.locator('[id="email"]');
