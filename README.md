@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project was created to explore Playwright and compare its capabilities with Cypress for test automation.
+I use Playwright at my current job and I tinker with it here in my personal repo too!
 
 ## Workflow
 
