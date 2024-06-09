@@ -18,7 +18,7 @@ The scripts in this repository are designed to be executed within a [GitHub Acti
 When a pull request or commit occurs in the primary repository, the following workflow is triggered:
 
 1. Both repos are [checked out](https://github.com/readytotest/readytotest.github.io/blob/63b6b47538ca4d96b0e905e945c218be53f7610d/.github/workflows/playwright-mysite.yml#L44) (the primary repo that contains my website and this repo that has the Playwright specs)
-2. A local Node.js server is [started](https://github.com/readytotest/readytotest.github.io/blob/63b6b47538ca4d96b0e905e945c218be53f7610d/.github/workflows/playwright-mysite.yml#L69) within the GitHub runner environment
+2. A local Node.js server is [started](https://github.com/readytotest/readytotest.github.io/blob/63b6b47538ca4d96b0e905e945c218be53f7610d/.github/workflows/playwright-mysite.yml#L69) within the [GitHub runner](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners) environment
 3. Playwright scripts located in this repo execute tests against the locally hosted [GitHub pages site](https://github.com/readytotest/readytotest.github.io/blob/63b6b47538ca4d96b0e905e945c218be53f7610d/index.htm)
 in my primary repo.
 
