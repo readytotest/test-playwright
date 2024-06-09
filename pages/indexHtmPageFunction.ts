@@ -1,6 +1,6 @@
 //Tinkering with writing this as a function Vs a class
 
-import { expect, Locator, Page } from '@playwright/test';
+import { expect, Page } from '@playwright/test';
 import { goToIndexHtm } from '@scripts/navigation';
 
 export const indexHtmPageFunction = (page: Page) => {
