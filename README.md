@@ -1,15 +1,11 @@
 # Playwright Test Automation Project
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=readytotest_test-playwright)](https://sonarcloud.io/summary/new_code?id=readytotest_test-playwright)
 
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=readytotest_test-playwright&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=readytotest_test-playwright)
-
 [![GitHub Actions GitGuardian](https://github.com/readytotest/test-playwright/actions/workflows/gitguardian.yml/badge.svg)](https://github.com/readytotest/test-playwright/actions/workflows/gitguardian.yml)
-
 [![GitHub Actions Playwright in readytotest.github.io Repo](https://github.com/readytotest/readytotest.github.io/actions/workflows/playwright-mysite.yml/badge.svg)](https://github.com/readytotest/readytotest.github.io/actions/workflows/playwright-mysite.yml)
 
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/t/readytotest/test-playwright?style=social&color=%23FF69B4)](https://github.com/readytotest/test-playwright/commits/main/)
 [![GitHub last commit](https://img.shields.io/github/last-commit/readytotest/test-playwright?style=social)](https://github.com/readytotest/test-playwright/commits/main/)
-
 
 ## Overview
 
@@ -21,9 +17,10 @@ The scripts in this repository are designed to be executed within a [GitHub Acti
 <br>
 When a pull request or commit occurs in the primary repository, the following workflow is triggered:
 
-1. Both repos are checked out (the primary repo that contains my website and this repo that has the Playwright specs)
-2. A local Node.js server is started within the GitHub runner environment
-3. Playwright scripts located in this repo execute tests against the locally hosted web application in my primary repo
+1. Both repos are [checked out](https://github.com/readytotest/readytotest.github.io/blob/63b6b47538ca4d96b0e905e945c218be53f7610d/.github/workflows/playwright-mysite.yml#L44) (the primary repo that contains my website and this repo that has the Playwright specs)
+2. A local Node.js server is [started](https://github.com/readytotest/readytotest.github.io/blob/63b6b47538ca4d96b0e905e945c218be53f7610d/.github/workflows/playwright-mysite.yml#L69) within the GitHub runner environment
+3. Playwright scripts located in this repo execute tests against the locally hosted [GitHub pages site](https://github.com/readytotest/readytotest.github.io/blob/63b6b47538ca4d96b0e905e945c218be53f7610d/index.htm)
+in my primary repo.
 
 ## Usage
 
