@@ -7,7 +7,7 @@
 
 ## Overview
 
-I use Playwright at my current job and I tinker with it here in my personal repo too!
+I use Playwright at my current job and I tinker 🧰🪛🛠️🚧 with it here in my personal repo too!
 
 ## Workflow
 
