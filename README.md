@@ -1,8 +1,5 @@
 # Playwright Test Automation Project
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=readytotest_test-playwright&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=readytotest_test-playwright)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=readytotest_test-playwright&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=readytotest_test-playwright)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=readytotest_test-playwright&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=readytotest_test-playwright)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=readytotest_test-playwright&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=readytotest_test-playwright)
 [![GitHub Actions GitGuardian](https://github.com/readytotest/test-playwright/actions/workflows/gitguardian.yml/badge.svg)](https://github.com/readytotest/test-playwright/actions/workflows/gitguardian.yml)
 
 ## Overview
