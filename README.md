@@ -11,10 +11,13 @@ I use Playwright at my current job and I tinker 🧰🪛🛠️🚧 with it here
 
 ## Workflow
 
-The scripts in this repository are designed to be executed within a [GitHub Actions workflow](https://github.com/readytotest/readytotest.github.io/blob/main/.github/workflows/playwright-mysite.yml) that resides in my main repository. When a pull request or commit occurs in the main repository, the following workflow is triggered:
+The scripts in this repository are designed to be executed within a [GitHub Actions workflow](https://github.com/readytotest/readytotest.github.io/blob/main/.github/workflows/playwright-mysite.yml) that resides in my [primary repository](https://github.com/readytotest/readytotest.github.io).
+<br>
+When a pull request or commit occurs in the primary repository, the following workflow is triggered:
 
-1. A local Node.js server is started within the GitHub runner environment.
-2. Playwright scripts, located in this repository, execute tests against the locally hosted web application.
+1. Both repos are checked out (the primary repo that contains my website and this repo that has the Playwright specs)
+2. A local Node.js server is started within the GitHub runner environment
+3. Playwright scripts located in this repo execute tests against the locally hosted web application in my primary repo
 
 ## Usage
 
