@@ -31,7 +31,7 @@ test.describe('Test the weather alerts page', () => {
 test(`weather alert page run:${i}`, async ({ page }) => {
     //From index htm, navigate to weather alert page
     await indexHtmPage.clickWeatherAlertLink();
-    //Expects page to display weather alerts for California
+    //Expects page to display weather alerts for Alaska
     await weatherAlertPage.verifyWeatherTitle(weatherAlertData.alertTitle, { ignoreCase: true });
   });
   
