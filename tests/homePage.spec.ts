@@ -25,7 +25,7 @@ test(`page copy run:${i}`, async ({ page }) => {
   await verifyTextAndLink(page, "intro-page-copy", "Welcome to my testing ecosystem!");
   await verifyTextAndLink(page, "weather-alerts", "View weather alerts on my page", "/html/weather-api.htm");
   await verifyTextAndLink(page, "testing-skills", "testing skills", "/html/testing-skills.htm");
-  await verifyTextAndLink(page, "qa-philosophy", "QA philosophy", "/html/philosophy.htm")
+  await verifyTextAndLink(page, "qa-philosophy", "QA philosophy", "/html/philosophy.htm");
 
 });
 
