@@ -10,7 +10,7 @@ export class WeatherAlertPage {
   }
 
   //Verify we are displaying alerts for California
-  async verifyWeatherAlertIsCalifornia(weatherAlertCalifornia: string, options: { ignoreCase: boolean }) {
+  async verifyWeatherTitle(weatherAlertCalifornia: string, options: { ignoreCase: boolean }) {
     await expect(this.weatherAlertPageCopy).toHaveText(weatherAlertCalifornia, options);
   }
 
