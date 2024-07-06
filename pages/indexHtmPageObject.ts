@@ -3,7 +3,7 @@
 import { expect, Page } from '@playwright/test';
 import { goToIndexHtm } from '@scripts/navigation';
 
-export const indexHtmPageFunction = (page: Page) => {
+export const indexHtmPageObject= (page: Page) => {
 
   const goto = async () => {
     await goToIndexHtm(page);
