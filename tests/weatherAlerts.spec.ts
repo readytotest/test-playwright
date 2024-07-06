@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import { IndexHtmPage } from "@pages/indexHtmPage";
+import { IndexHtmPage } from "@pages/indexHtmPage-old";
 import { WeatherAlertPage } from "@pages/weatherAlertPage";
 import { weatherAlertData } from "@test-data/testData.json";
 let weatherAlertPage: WeatherAlertPage;

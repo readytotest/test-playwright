@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import { indexHtmPageObject } from "@pages/indexHtmPageObject";
+import { homePageObject } from "@pages/homePageObject";
 import { faker } from '@faker-js/faker/locale/en_US';
 import { testIdGenerator } from '@scripts/testIdGenerator';
 import { feedbackWidgetData, indexHtmData } from "@test-data/testData.json";
@@ -12,14 +12,14 @@ test.describe('Test the index htm page', () => {
     
   test.beforeEach(async ({ page }) => {
     console.log(`Running ${test.info().title}`);
-    await indexHtmPageObject(page).goto();
+    await homePageObject(page).goto();
     
   });
   
 test(`page copy run:${i}`, async ({ page }) => {
   
   //Verify title of index.htm
-  await indexHtmPageObject(page).verifyPageTitle(indexHtmData.pageTitle);
+  await homePageObject(page).verifyPageTitle(indexHtmData.pageTitle);
 
   //Verify index htm page copy
   await verifyTextAndLink(page, "intro-page-copy", "Welcome to my testing ecosystem!");
@@ -34,17 +34,17 @@ test(`page copy run:${i}`, async ({ page }) => {
 //and exploration, so I'm disregarding best practice!
 test(`feedback widget run:${i}`, async ({ page }) => {
   //Open the feedback widget
-  await indexHtmPageObject(page).clickFeedbackWidget();
+  await homePageObject(page).clickFeedbackWidget();
   //Fill in name field
-  await indexHtmPageObject(page).fillFeedbackWidgetNameField(feedbackWidgetData.fullName);
+  await homePageObject(page).fillFeedbackWidgetNameField(feedbackWidgetData.fullName);
   //Fill in email field
-  await indexHtmPageObject(page).fillFeedbackWidgetEmailField(feedbackWidgetData.email);
+  await homePageObject(page).fillFeedbackWidgetEmailField(feedbackWidgetData.email);
   //Fill in message field
-  await indexHtmPageObject(page).fillFeedbackWidgetMessageField(`${feedbackWidgetData.message} ${feedbackWidgetLoremIpsum} TestID:${testIdGenerator}`);
+  await homePageObject(page).fillFeedbackWidgetMessageField(`${feedbackWidgetData.message} ${feedbackWidgetLoremIpsum} TestID:${testIdGenerator}`);
   //Click Send Now button
-  await indexHtmPageObject(page).clickFeedbackWidgetSendNowButton();
+  await homePageObject(page).clickFeedbackWidgetSendNowButton();
   //Verify message sent successfully
-  await indexHtmPageObject(page).verifyFeedbackWidgetMessageSent(feedbackWidgetData.confirmMessageSent, { ignoreCase: true });
+  await homePageObject(page).verifyFeedbackWidgetMessageSent(feedbackWidgetData.confirmMessageSent, { ignoreCase: true });
   
 });
 
