@@ -1,3 +1,16 @@
+/***********************************************
+ *  I initially implemented the Playwright tests 
+ *  using class-based page objects.
+ *  
+ *  However, I switched to function-based page 
+ *  objects because I found them simpler and 
+ *  easier to maintain.
+ *  
+ *  Consequently, I am no longer updating this 
+ *  file.
+ ***********************************************/
+
+
 import { test } from "@playwright/test";
 import { IndexHtmPage } from "@pages/indexHtmPage-old";
 import { faker } from '@faker-js/faker/locale/en_US';
