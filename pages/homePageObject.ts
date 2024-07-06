@@ -14,7 +14,7 @@ export const homePageObject= (page: Page) => {
   };
 
   const verifyIndexPageCopyIntro = async (indexPageCopy: string) => {
-    await expect(page.locator('[data-testid="intro-page-copy"]')).toHaveText(indexPageCopy);
+    await expect(page.getByTestId("intro-page-copy")).toHaveText(indexPageCopy);
   };
 
   const clickWeatherAlertLink = async () => {
