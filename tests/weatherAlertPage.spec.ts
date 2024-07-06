@@ -17,7 +17,7 @@ test(`page copy run:${i}`, async ({ page }) => {
   
  //From index htm, navigate to weather alert page
  await homePageObject(page).clickWeatherAlertLink();
- //Expects page to display weather alerts for California
+ //Expects page to display weather alerts for Alaska
  await weatherAlertPageObject(page).verifyWeatherTitle(weatherAlertData.alertTitle, { ignoreCase: true });
 });
 
