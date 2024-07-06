@@ -15,7 +15,7 @@ import { test } from "@playwright/test";
 import { IndexHtmPage } from "@pages/indexHtmPage-old";
 import { faker } from '@faker-js/faker/locale/en_US';
 import { testIdGenerator } from '@scripts/testIdGenerator';
-import { feedbackWidgetData, indexHtmData } from "@test-data/testData.json";
+import { feedbackWidgetData, indexHtmData } from "@test-data/testData-old.json";
 const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 let indexHtmPage: IndexHtmPage;
 

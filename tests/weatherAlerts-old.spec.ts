@@ -13,7 +13,7 @@
 import { test } from "@playwright/test";
 import { IndexHtmPage } from "@pages/indexHtmPage-old";
 import { WeatherAlertPage } from "@pages/weatherAlertPage-old";
-import { weatherAlertData } from "@test-data/testData.json";
+import { weatherAlertData } from "@test-data/testData-old.json";
 let weatherAlertPage: WeatherAlertPage;
 let indexHtmPage: IndexHtmPage; 
 
