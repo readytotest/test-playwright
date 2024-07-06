@@ -2,7 +2,7 @@ import { test } from "@playwright/test";
 import { homePageObject } from "@pages/homePageObject";
 import { faker } from '@faker-js/faker/locale/en_US';
 import { testIdGenerator } from '@scripts/testIdGenerator';
-import { feedbackWidgetData, indexHtmData } from "@test-data/testData.json";
+import { feedbackWidgetData, indexHtmData } from '@test-data/testData';
 import { verifyTextAndLink } from "@scripts/verifyTextAndLink";
 const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 
@@ -22,7 +22,7 @@ test(`page copy run:${i}`, async ({ page }) => {
   await homePageObject(page).verifyPageTitle(indexHtmData.pageTitle);
 
   //Verify index htm page copy
-  await verifyTextAndLink(page, "intro-page-copy", "Welcome to my testing ecosystem!");
+  await verifyTextAndLink(page, "intro-page-copy", indexHtmData.introPageCopy);
   await verifyTextAndLink(page, "weather-alerts", "View weather alerts on my page", "/html/weather-api.htm");
   await verifyTextAndLink(page, "testing-skills", "testing skills", "/html/testing-skills.htm");
   await verifyTextAndLink(page, "qa-philosophy", "QA philosophy", "/html/philosophy.htm");

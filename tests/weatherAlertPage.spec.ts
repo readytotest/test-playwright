@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 import { homePageObject } from "@pages/homePageObject";
 import { weatherAlertPageObject } from "@pages/weatherAlertPageObject";
-import { weatherAlertData } from "@test-data/testData.json";
+import { weatherAlertData } from '@test-data/testData';
 
 //Run the test 2 times
 for (let i = 0; i <= 1; i++) {
