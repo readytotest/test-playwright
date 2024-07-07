@@ -52,7 +52,7 @@ href
 // Read the copied link from the clipboard
 const copiedFromClipboard = await page.evaluate(async () => await navigator.clipboard.readText());
 
-// Open a unique browser session and navigate to the copied link.s: ["clipboard-read", "clipboard-write"]
+// Open a unique browser session and navigate to the copied link.
 await secondaryPage.goto(copiedFromClipboard)
 
 // Expects page to display weather alerts for Alaska
