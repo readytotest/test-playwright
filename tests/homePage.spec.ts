@@ -6,7 +6,12 @@ import { testIdGenerator } from "@scripts/testIdGenerator";
 import { verifyTextAndLink } from "@scripts/verifyTextAndLink";
 const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 
-//Run the test 2 times
+// Run the test 2 times. You can change the loop to run more if you want.
+// However, I think it's more straightforward and preferable if you just
+// use Playwright's built in --repeat-each <N> functionality from the terminal,
+// rather than wrapping the tests in a for loop.
+// Adding the loop here is just me tinkering with things again.
+
 for (let i = 0; i <= 1; i++) {
 test.describe('Test the index htm page', () => {
     
