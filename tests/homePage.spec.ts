@@ -1,8 +1,8 @@
 import { test } from "@playwright/test";
 import { homePageObject } from "@pages/homePageObject";
 import { faker } from '@faker-js/faker/locale/en_US';
-import { testIdGenerator } from '@scripts/testIdGenerator';
-import { feedbackWidgetData, indexHtmData } from '@test-data/testData';
+import testData from "@test-data/testData";
+import { testIdGenerator } from "@scripts/testIdGenerator";
 import { verifyTextAndLink } from "@scripts/verifyTextAndLink";
 const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 
@@ -19,10 +19,10 @@ test.describe('Test the index htm page', () => {
 test(`page copy run:${i}`, async ({ page }) => {
   
   //Verify title of index.htm
-  await homePageObject(page).verifyPageTitle(indexHtmData.pageTitle);
+  await homePageObject(page).verifyPageTitle(testData.indexHtmData.pageTitle);
 
   //Verify index htm page copy
-  await verifyTextAndLink(page, "intro-page-copy", indexHtmData.introPageCopy);
+  await verifyTextAndLink(page, "intro-page-copy", testData.indexHtmData.introPageCopy);
   await verifyTextAndLink(page, "weather-alerts", "View weather alerts on my page", "/html/weather-api.htm");
   await verifyTextAndLink(page, "testing-skills", "testing skills", "/html/testing-skills.htm");
   await verifyTextAndLink(page, "qa-philosophy", "QA philosophy", "/html/philosophy.htm");
@@ -36,15 +36,15 @@ test(`feedback widget run:${i}`, async ({ page }) => {
   //Open the feedback widget
   await homePageObject(page).clickFeedbackWidget();
   //Fill in name field
-  await homePageObject(page).fillFeedbackWidgetNameField(feedbackWidgetData.fullName);
+  await homePageObject(page).fillFeedbackWidgetNameField(testData.feedbackWidgetData.fullName);
   //Fill in email field
-  await homePageObject(page).fillFeedbackWidgetEmailField(feedbackWidgetData.email);
+  await homePageObject(page).fillFeedbackWidgetEmailField(testData.feedbackWidgetData.email);
   //Fill in message field
-  await homePageObject(page).fillFeedbackWidgetMessageField(`${feedbackWidgetData.message} ${feedbackWidgetLoremIpsum} TestID:${testIdGenerator}`);
+  await homePageObject(page).fillFeedbackWidgetMessageField(`${testData.feedbackWidgetData.message} ${feedbackWidgetLoremIpsum} TestID:${testIdGenerator}`);
   //Click Send Now button
   await homePageObject(page).clickFeedbackWidgetSendNowButton();
   //Verify message sent successfully
-  await homePageObject(page).verifyFeedbackWidgetMessageSent(feedbackWidgetData.confirmMessageSent, { ignoreCase: true });
+  await homePageObject(page).verifyFeedbackWidgetMessageSent(testData.feedbackWidgetData.confirmMessageSent, { ignoreCase: true });
   
 });
 
