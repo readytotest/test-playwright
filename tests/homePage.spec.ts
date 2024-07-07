@@ -54,7 +54,10 @@ test(`feedback widget run:${i}`, async ({ page }) => {
   await homePageObject(page).verifyFeedbackWidgetMessageSent(testData.feedbackWidgetData.confirmMessageSent, { ignoreCase: true });
   
 });
-
+test.afterEach(async ({ browser }) => {
+  console.log(`Completed ${test.info().title}`);
+  
+});
 
 });
 }
