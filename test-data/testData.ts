@@ -8,7 +8,14 @@ const testData = {
     },
     indexHtmData: {
       pageTitle: "Ready to Test (QA)",
-      introPageCopy: "Welcome to my testing ecosystem!"
+      introPageCopy: "Welcome to my testing ecosystem!",
+      weatherAlertLinkText: "View weather alerts on my page",
+      weatherAlertHref: "/html/weather-api.htm",
+      testSkillsText: "testing skills",
+      testSkillsHref: "/html/testing-skills.htm",
+      philosophyText: "QA philosophy",
+      philosophyHref: "/html/philosophy.htm",
+
     },
     weatherAlertData: {
       alertTitle: "current watches, warnings, and advisories for alaska"
