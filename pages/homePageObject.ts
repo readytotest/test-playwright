@@ -18,6 +18,10 @@ import { goToIndexHtm } from '@scripts/navigation';
 
 export const homePageObject= (page: Page) => {
 
+  // Private helpers 
+  const findAboutSection = () => page.locator('#about-section');
+
+  // Public interface
   const goto = async () => {
     await goToIndexHtm(page);
   };
@@ -28,6 +32,10 @@ export const homePageObject= (page: Page) => {
 
   const verifyIndexPageCopyIntro = async (indexPageCopy: string) => {
     await expect(page.getByTestId("intro-page-copy")).toHaveText(indexPageCopy);
+  };
+
+  const letsTinkerAndVerifySomeMorePageCopy = async (verifyIntroText: string) => {
+    await findAboutSection().getByText(verifyIntroText);
   };
 
   const clickWeatherAlertLink = async () => {
@@ -69,6 +77,7 @@ export const homePageObject= (page: Page) => {
     fillFeedbackWidgetEmailField,
     fillFeedbackWidgetMessageField,
     clickFeedbackWidgetSendNowButton,
+    letsTinkerAndVerifySomeMorePageCopy,
     verifyFeedbackWidgetMessageSent
   };
 };
