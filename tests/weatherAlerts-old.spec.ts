@@ -28,7 +28,7 @@ test.describe('Test the weather alerts page', () => {
     await indexHtmPage.goto();
   });
   
-test(`weather alert page run:${i}`, async ({ page }) => {
+test(`weather alert page test run:${i}`, async ({ page }) => {
     //From index htm, navigate to weather alert page
     await indexHtmPage.clickWeatherAlertLink();
     //Expects page to display weather alerts for Alaska

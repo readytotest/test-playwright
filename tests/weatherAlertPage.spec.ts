@@ -27,7 +27,7 @@ test.describe('Test the weather alerts page', () => {
     
   });
   
-test(`page copy run:${i}`, async ({ page, browser }) => {
+test(`weather page test run:${i}`, async ({ page, browser }) => {
 
 /* _______________________________________________________________
   |                                                               |

@@ -33,7 +33,7 @@ test.describe('Test the index htm page', () => {
     
   });
   
-test(`page copy run:${i}`, async ({ page }) => {
+test(`home page test run:${i}`, async ({ page }) => {
   
   // There a JS alert on this page, but Playwright automatically dismisses it
   // https://playwright.dev/docs/dialogs
@@ -60,7 +60,7 @@ test(`page copy run:${i}`, async ({ page }) => {
 *************************************************************
 */
 
-test(`feedback widget run:${i}`, async ({ page }) => {
+test(`feedback widget test run:${i}`, async ({ page }) => {
   // Open the feedback widget
   await pageObjectHome.clickFeedbackWidget();
   // Fill in name field
