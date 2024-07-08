@@ -1,3 +1,15 @@
+/*
+   ┌───────────────────────────────────────────────────────┐
+   │ I use Playwright daily at my job...
+   | but I also tinker with Playwright in my spare time!   │
+   | because I like it!    
+   │                                                       │
+   │ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ 
+   │                                                       │
+   │ ¯\_(ツ)_/¯ Oh well, let's automate some tests!™        
+   └───────────────────────────────────────────────────────┘
+*/
+
 //Tinkering with writing this as a function Vs a class
 
 import { expect, Page } from '@playwright/test';
