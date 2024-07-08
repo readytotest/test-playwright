@@ -55,6 +55,7 @@ test(`home page test run:${i}`, async ({ page }) => {
 
   // Verify index htm page copy
   await verifyTextAndLink(page, "intro-page-copy", testData.indexHtmData.introPageCopy);
+  await pageObjectHome.letsTinkerAndVerifySomeMorePageCopy(testData.indexHtmData.introPageCopy2);
   await verifyTextAndLink(page, "weather-alerts", testData.indexHtmData.weatherAlertLinkText, testData.indexHtmData.weatherAlertHref);
   await verifyTextAndLink(page, "testing-skills", testData.indexHtmData.testSkillsText, testData.indexHtmData.testSkillsHref);
   await verifyTextAndLink(page, "qa-philosophy", testData.indexHtmData.philosophyText, testData.indexHtmData.philosophyHref);
