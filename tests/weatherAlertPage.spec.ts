@@ -19,7 +19,7 @@ import testData from "@test-data/testData";
 
 // ___________________________________________________________________
 // |                                                                 |
-// |   Run the test 1 time. You can change the loop to run more     |
+// |   Run the test 1 time. You can change the loop to run more      |
 // |   if you want. However, I think it's more straightforward       |
 // |   and preferable if you just use Playwright's built in          |
 // |   --repeat-each <N> functionality from the terminal,            |
