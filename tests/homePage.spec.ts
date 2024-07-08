@@ -20,12 +20,14 @@ const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 
 for (let i = 0; i <= 0; i++) {
 test.describe('Test the index htm page', () => {
-  let pageObjectHome: ReturnType<typeof homePageObject>
 
+  // Declare pageObjectHome with type.
+  // Explicitly set the type due to TypeScript not inferring it automatically.
+  let pageObjectHome: ReturnType<typeof homePageObject>
 
   test.beforeEach(async ({ page }) => {
     console.log(`Running ${test.info().title}`);
-    
+    // Initialize pageObjectHome with the page object
     pageObjectHome = homePageObject(page);
     await pageObjectHome.goto();
     
@@ -34,6 +36,7 @@ test.describe('Test the index htm page', () => {
 test(`page copy run:${i}`, async ({ page }) => {
   
   // There a JS alert on this page, but Playwright automatically dismisses it
+  // https://playwright.dev/docs/dialogs
  
   // Verify title of index.htm
   await pageObjectHome.verifyPageTitle(testData.indexHtmData.pageTitle);
@@ -72,6 +75,7 @@ test(`feedback widget run:${i}`, async ({ page }) => {
   await pageObjectHome.verifyFeedbackWidgetMessageSent(testData.feedbackWidgetData.confirmMessageSent, { ignoreCase: true });
   
 });
+
 test.afterEach(async ({ browser }) => {
   console.log(`Completed ${test.info().title}`);
   
