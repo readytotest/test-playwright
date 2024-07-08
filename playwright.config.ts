@@ -1,3 +1,13 @@
+/*
+   ┌───────────────────────────────────────────────────────┐
+   │ This is the playwright config for the local env       │
+   │                                                       
+   │ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ │
+   │                                                       │
+   │ ¯\_(ツ)_/¯ Oh well, let's automate some tests!!        
+   └───────────────────────────────────────────────────────┘
+*/
+
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({

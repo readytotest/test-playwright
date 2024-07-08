@@ -1,3 +1,14 @@
+/*
+   ┌───────────────────────────────────────────────────────┐
+   │ This is the playwright config for GitHub Actions      
+   │                                                       │
+   │ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ 
+   │                                                       │
+   │ ¯\_(ツ)_/¯ Oh well, let's automate some tests!        
+   └───────────────────────────────────────────────────────┘
+*/
+
+
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
