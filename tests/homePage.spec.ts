@@ -1,6 +1,6 @@
 /*
    ┌───────────────────────────────────────────────────────┐
-   │I use Playwright daily at my job...
+   │ I use Playwright daily at my job...
    | but I also tinker with Playwright in my spare time!   │
    | because I like it!    
    │                                                       │
