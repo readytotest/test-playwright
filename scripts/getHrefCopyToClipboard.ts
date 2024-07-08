@@ -12,7 +12,7 @@
 import { expect, Page } from '@playwright/test';
 
 async function getHrefAndCopyToClipboard(page: Page, id: string) {
-    // Find the element of the weather link page by data-testid and get its href
+    // Find the element by data-testid and get its href
     const link = await page.locator(`[data-testid="${id}"]`);
     const href = await link.getAttribute('href');
 
