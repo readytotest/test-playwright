@@ -11,6 +11,7 @@
 */
 
 //Tinkering with writing this as a function Vs a class
+//I enjoy exploring new ways of solving problems and structuring my code
 
 import { expect, Page } from '@playwright/test';
 
