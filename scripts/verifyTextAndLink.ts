@@ -1,6 +1,13 @@
-// This function is designed for generic use across pages as a helper utility.
-// It verifies the text content and visibility of an element identified by 'id'.
-// The 'href' parameter is optional and is used to verify the element's href attribute if provided.
+/**********************************************
+ * This function is designed for generic use   *
+ * across pages as a helper utility.           *
+ * It verifies the text content and visibility *
+ * of an element identified by 'id'.           *
+ * The 'href' parameter is optional and is     *
+ * used to verify the element's href attribute *
+ * if provided.                                *
+ **********************************************/
+
 
 import { expect, Page } from '@playwright/test';
 
