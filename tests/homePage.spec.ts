@@ -16,7 +16,6 @@ import { faker } from '@faker-js/faker/locale/en_US';
 import testData from "@test-data/testData";
 import { testIdGenerator } from "@scripts/testIdGenerator";
 import { verifyTextAndLink } from "@scripts/verifyTextAndLink";
-import { typeTodaysDate } from "@scripts/typeTodaysDate";
 const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 
 // ___________________________________________________________________
