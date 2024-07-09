@@ -15,6 +15,7 @@
 
 import { expect, Page } from '@playwright/test';
 import { goToIndexHtm } from '@scripts/navigation';
+import { typeTodaysDate } from '@scripts/typeCurrentDate';
 
 export const homePageObject= (page: Page) => {
 
@@ -55,7 +56,8 @@ export const homePageObject= (page: Page) => {
   };
 
   const fillFeedbackWidgetMessageField = async (widgetMessageField: string) => {
-    await page.locator('[id="message"]').fill(widgetMessageField);
+    await page.locator('[id="message"]').fill(`${widgetMessageField}\n`);
+    await typeTodaysDate(page);
   };
 
   const clickFeedbackWidgetSendNowButton = async () => {
