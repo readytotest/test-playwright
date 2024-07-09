@@ -15,7 +15,7 @@
 
 import { expect, Page } from '@playwright/test';
 import { goToIndexHtm } from '@scripts/navigation';
-import { typeTodaysDate } from '@scripts/typeCurrentDate';
+import { typeTodaysDate } from '@scripts/typeTodaysDate';
 
 export const homePageObject= (page: Page) => {
 
