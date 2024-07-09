@@ -82,7 +82,7 @@ test(`feedback widget test run:${i}`, async ({ page }) => {
   // Fill in email field
   await pageObjectHome.fillFeedbackWidgetEmailField(testData.feedbackWidgetData.email);
   // Fill in message field
-  await pageObjectHome.fillFeedbackWidgetMessageField(`\n${testData.feedbackWidgetData.message} ${feedbackWidgetLoremIpsum} TestID:${testIdGenerator}\n`);
+  await pageObjectHome.fillFeedbackWidgetMessageField(`${testData.feedbackWidgetData.message} ${feedbackWidgetLoremIpsum} TestID:${testIdGenerator}\n`);
   await typeTodaysDate(page);
   // Click Send Now button
   await pageObjectHome.clickFeedbackWidgetSendNowButton();
