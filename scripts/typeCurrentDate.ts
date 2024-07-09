@@ -2,7 +2,7 @@
 ________________________________________________________________________
 | // ᕙ(⇀‸↼‶)ᕗ                                                          |
 | // This helper is like a time stamper. It types out the current date  |
-| // formatted as dd/mm/yyyy                                            |
+| // formatted as mm-dd-yyyy                                            |
 |_______________________________________________________________________|
 
 */
