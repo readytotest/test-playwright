@@ -16,6 +16,7 @@ import { faker } from '@faker-js/faker/locale/en_US';
 import testData from "@test-data/testData";
 import { testIdGenerator } from "@scripts/testIdGenerator";
 import { verifyTextAndLink } from "@scripts/verifyTextAndLink";
+import { typeTodaysDate } from "@scripts/typeCurrentDate";
 const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 
 // ___________________________________________________________________
@@ -81,7 +82,8 @@ test(`feedback widget test run:${i}`, async ({ page }) => {
   // Fill in email field
   await pageObjectHome.fillFeedbackWidgetEmailField(testData.feedbackWidgetData.email);
   // Fill in message field
-  await pageObjectHome.fillFeedbackWidgetMessageField(`${testData.feedbackWidgetData.message} ${feedbackWidgetLoremIpsum} TestID:${testIdGenerator}`);
+  await pageObjectHome.fillFeedbackWidgetMessageField(`\n${testData.feedbackWidgetData.message} ${feedbackWidgetLoremIpsum} TestID:${testIdGenerator}\n`);
+  await typeTodaysDate(page);
   // Click Send Now button
   await pageObjectHome.clickFeedbackWidgetSendNowButton();
   // Verify message sent successfully
