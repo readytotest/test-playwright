@@ -20,7 +20,7 @@ import { typeTodaysDate } from '@scripts/typeTodaysDate';
 export const homePageObject= (page: Page) => {
 
   // Private helpers 
-  const findAboutSection = () => page.locator('#about-section');
+  const findWeatherSection = () => page.locator('#weather-section');
 
   // Public interface
   const goto = async () => {
@@ -31,16 +31,8 @@ export const homePageObject= (page: Page) => {
     await expect(page).toHaveTitle(pageTitle);
   };
 
-  const verifyIndexPageCopyIntro = async (indexPageCopy: string) => {
-    await expect(page.getByTestId("intro-page-copy")).toHaveText(indexPageCopy);
-  };
-
-  const letsTinkerAndVerifySomeMorePageCopy = async (verifyIntroText: string) => {
-    await findAboutSection().getByText(verifyIntroText);
-  };
-
   const clickWeatherAlertLink = async () => {
-    await page.locator('a', { hasText: 'View weather alerts on my page' }).click();
+    await findWeatherSection().locator('a', { hasText: 'View weather alerts on my page' }).click();
   };
 
   const clickFeedbackWidget = async () => {
@@ -72,14 +64,12 @@ export const homePageObject= (page: Page) => {
   return {
     goto,
     verifyPageTitle,
-    verifyIndexPageCopyIntro,
     clickWeatherAlertLink,
     clickFeedbackWidget,
     fillFeedbackWidgetNameField,
     fillFeedbackWidgetEmailField,
     fillFeedbackWidgetMessageField,
     clickFeedbackWidgetSendNowButton,
-    letsTinkerAndVerifySomeMorePageCopy,
     verifyFeedbackWidgetMessageSent
   };
 };
