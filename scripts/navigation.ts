@@ -19,7 +19,7 @@ const production = 'https://readytotest.github.io';
 
 async function goToIndexHtm(page: Page) {
   //Swap out the localHost variable below with production if you want to test the live site
-    await page.goto(production);
+    await page.goto(localHost);
 }
 
 export { goToIndexHtm };
