@@ -61,7 +61,7 @@ test(`home page test run:${i}`, async ({ page }) => {
 
   // Download a file and verify it
   await pageObjectHome.initiateDownload("./html/vid/weatherAlertTest.mp4" ,"weatherAlertTest.mp4");
-  await pageObjectHome.downloadFile("weatherAlertTest.mp4");
+  await pageObjectHome.handleDownloadAndVerify("weatherAlertTest.mp4");
 });
 
 /*

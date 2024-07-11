@@ -44,7 +44,7 @@ export const homePageObject= (page: Page) => {
 // Handles the download of a file, saves it to a specified path,
 // verifies the downloaded file name matches the expected fileName,
 // and confirms the existence of the saved file at the specified filePath.
-  const downloadFile = async (fileName: string) => {
+  const handleDownloadAndVerify = async (fileName: string) => {
     const download = await page.waitForEvent("download");
     const filePath = `./downloads/${download.suggestedFilename()}`;
     await download.saveAs(filePath);
@@ -94,8 +94,8 @@ export const homePageObject= (page: Page) => {
   };
 
   return {
-    downloadFile,
     goto,
+    handleDownloadAndVerify,
     initiateDownload,
     verifyPageTitle,
     clickWeatherAlertLink,
