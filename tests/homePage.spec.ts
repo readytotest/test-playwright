@@ -59,6 +59,9 @@ test(`home page test run:${i}`, async ({ page }) => {
   await verifyTextAndLink(page, "testing-skills", testData.indexHtmData.testSkillsText, testData.indexHtmData.testSkillsHref);
   await verifyTextAndLink(page, "qa-philosophy", testData.indexHtmData.philosophyText, testData.indexHtmData.philosophyHref);
 
+  // Download a file and verify it
+  await pageObjectHome.initiateDownload("./html/vid/weatherAlertTest.mp4" ,"weatherAlertTest.mp4");
+  await pageObjectHome.downloadFile("weatherAlertTest.mp4");
 });
 
 /*

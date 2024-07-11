@@ -16,6 +16,7 @@
 import { expect, Page } from '@playwright/test';
 import { goToIndexHtm } from '@scripts/navigation';
 import { typeTodaysDate } from '@scripts/typeTodaysDate';
+import * as fs from 'fs';
 
 export const homePageObject= (page: Page) => {
 
@@ -25,6 +26,37 @@ export const homePageObject= (page: Page) => {
   // Public interface
   const goto = async () => {
     await goToIndexHtm(page);
+  };
+
+  // Programmatically force the browser to download a file without relying on user interaction,
+  // otherwise some files open witin the browser itself and I want to download it.
+  const initiateDownload = async (hrefAttribute: string, fileName: string) => {
+    await page.evaluate(({ hrefAttribute, fileName }) => {
+      const a = document.createElement('a');
+      a.href = hrefAttribute;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }, { hrefAttribute, fileName });
+  };
+  
+// Handles the download of a file, saves it to a specified path,
+// verifies the downloaded file name matches the expected fileName,
+// and confirms the existence of the saved file at the specified filePath.
+  const downloadFile = async (fileName: string) => {
+    const download = await page.waitForEvent("download");
+    const filePath = `./downloads/${download.suggestedFilename()}`;
+    await download.saveAs(filePath);
+     // Log the actual suggested filename and expected filename
+    console.log(`Actual Suggested Filename: ${download.suggestedFilename()}`);
+    console.log(`Expected Filename: ${fileName}`);
+    expect(download.suggestedFilename()).toBe(fileName);
+    fs.access(filePath, fs.constants.F_OK, error => {
+      expect(error).toBe(null);
+    });
+    console.log(`File '${fileName}' downloaded and saved successfully at '${filePath}'.`);
+    await page.waitForTimeout(500);
   };
 
   const verifyPageTitle = async (pageTitle: string) => {
@@ -62,7 +94,9 @@ export const homePageObject= (page: Page) => {
   };
 
   return {
+    downloadFile,
     goto,
+    initiateDownload,
     verifyPageTitle,
     clickWeatherAlertLink,
     clickFeedbackWidget,
