@@ -11,6 +11,7 @@
 */
 
 import { Page, test } from "@playwright/test";
+import { goToIndexHtm } from "@scripts/navigation";
 import { homePageObject } from "@pages/homePageObject";
 import { weatherAlertPageObject } from "@pages/weatherAlertPageObject";
 import { getHrefAndCopyToClipboard } from "@scripts/getHrefCopyToClipboard";
@@ -35,7 +36,7 @@ test.describe('Test the weather alerts page', () => {
     console.log(`Running ${test.info().title}`);
     // Initialize pageObjectHome to hold the home page object for primary page
     const pageObjectHome = homePageObject(page);
-    await pageObjectHome.goto();
+    await goToIndexHtm(page);
     
   });
   
@@ -72,7 +73,7 @@ const copiedFromClipboard = await readClipboardContent(page);
 
 // Open a unique (2nd) browser session and navigate to the copied link.
 // Here's where if you're watching the test run in headed mode, you'll see the second browser session appear.
-await secondaryPage.goto(copiedFromClipboard)
+await secondaryPage.goto(copiedFromClipboard);
 
 // In the (2nd) browser, it expects page to display weather alerts for Alaska
 await pageObjectweather.verifyWeatherTitle(testData.weatherAlertData.alertTitle, { ignoreCase: true });

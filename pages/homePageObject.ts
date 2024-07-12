@@ -14,7 +14,6 @@
 //I enjoy exploring new ways of solving problems and structuring my code
 
 import { expect, Page } from '@playwright/test';
-import { goToIndexHtm } from '@scripts/navigation';
 import { typeTodaysDate } from '@scripts/typeTodaysDate';
 import * as fs from 'fs';
 
@@ -24,9 +23,7 @@ export const homePageObject= (page: Page) => {
   const findWeatherSection = () => page.locator('#weather-section');
 
   // Public interface
-  const goto = async () => {
-    await goToIndexHtm(page);
-  };
+
 
   // Programmatically force the browser to download a file without relying on user interaction,
   // otherwise some files open witin the browser itself and I want to download it.
@@ -94,7 +91,6 @@ export const homePageObject= (page: Page) => {
   };
 
   return {
-    goto,
     handleDownloadAndVerify,
     initiateDownload,
     verifyPageTitle,

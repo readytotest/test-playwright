@@ -16,6 +16,7 @@ import { faker } from '@faker-js/faker/locale/en_US';
 import testData from "@test-data/testData";
 import { testIdGenerator } from "@scripts/testIdGenerator";
 import { verifyTextAndLink } from "@scripts/verifyTextAndLink";
+import { goToIndexHtm } from "@scripts/navigation";
 const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 
 // ___________________________________________________________________
@@ -41,7 +42,7 @@ test.describe('Test the index htm page', () => {
     console.log(`Running ${test.info().title}`);
     // Initialize pageObjectHome with the page object
     pageObjectHome = homePageObject(page);
-    await pageObjectHome.goto();
+    await goToIndexHtm(page);
     
   });
   
