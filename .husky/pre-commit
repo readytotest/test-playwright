@@ -1,4 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run lint && npm run prettier
+#npm run lint && npm run prettier
+
+# Run lint-staged to execute configured tasks
+npx lint-staged
+
