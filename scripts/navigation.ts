@@ -14,11 +14,8 @@
 
 import { Page } from "@playwright/test";
 
-// eslint-disable-next-line no-unused-vars
 const localHost = "http://localhost:3000"; // eslint-disable-line @typescript-eslint/no-unused-vars
-
-// eslint-disable-next-line no-unused-vars
-const production = "https://readytotest.github.io";
+const production = "https://readytotest.github.io"; // eslint-disable-line @typescript-eslint/no-unused-vars
 
 async function goToIndexHtm(page: Page) {
   //Swap out the localHost variable below with production if you want to test the live site
