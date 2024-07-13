@@ -13,8 +13,8 @@ import { defineConfig, devices } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests",
   testIgnore: [
-    //'**/indexHtm-old.spec.ts',  // Exclude this specific file in any subdirectory
-    //'**/weatherAlerts-old.spec.ts' // Exclude another specific file in any subdirectory
+    "**/indexHtm-old.spec.ts", // Exclude this specific file in any subdirectory
+    "**/weatherAlerts-old.spec.ts", // Exclude another specific file in any subdirectory
   ],
   /* Run tests in files in parallel */
   fullyParallel: true,
