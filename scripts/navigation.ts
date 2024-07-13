@@ -12,15 +12,17 @@
  * and then run the test.                     *
  **********************************************/
 
-import { Page } from '@playwright/test';
+import { Page } from "@playwright/test";
 
-const localHost = 'http://localhost:3000';
-const production = 'https://readytotest.github.io';
+// eslint-disable-next-line no-unused-vars
+const localHost = "http://localhost:3000"; // eslint-disable-line @typescript-eslint/no-unused-vars
+
+// eslint-disable-next-line no-unused-vars
+const production = "https://readytotest.github.io";
 
 async function goToIndexHtm(page: Page) {
   //Swap out the localHost variable below with production if you want to test the live site
-    await page.goto(localHost);
+  await page.goto(production);
 }
 
 export { goToIndexHtm };
-

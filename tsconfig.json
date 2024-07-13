@@ -1,16 +1,15 @@
 {
-    "compilerOptions": {
-      "resolveJsonModule": true,
-      "baseUrl": ".",
-      "paths": {
-        "@scripts/*": ["scripts/*"],
-        "@test-data/*": ["test-data/*"],
-        "@pages/*": ["pages/*"]
-      },
-      "module": "commonjs",
-      "target": "ES2021",
-      "strict": true,
-      "esModuleInterop": true
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@scripts/*": ["scripts/*"],
+      "@test-data/*": ["test-data/*"],
+      "@pages/*": ["pages/*"]
     },
-    
+    "module": "commonjs",
+    "target": "ES2021",
+    "strict": true,
+    "esModuleInterop": true
   }
+}

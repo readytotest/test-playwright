@@ -8,11 +8,10 @@
  * if provided.                                *
  **********************************************/
 
-
-import { expect, Page } from '@playwright/test';
+import { expect, Page } from "@playwright/test";
 
 async function verifyTextAndLink(page: Page, id: string, text: string, href?: string) {
-  const element = await page.locator(`[data-testid="${id}"]`);
+  const element = page.locator(`[data-testid="${id}"]`);
 
   // Verify text content and visibility
   await expect(element).toHaveText(text);
@@ -20,10 +19,9 @@ async function verifyTextAndLink(page: Page, id: string, text: string, href?: st
 
   // Verify href attribute if provided
   if (href !== undefined) {
-    const actualHref = await element.getAttribute('href');
+    const actualHref = await element.getAttribute("href");
     expect(actualHref).toBe(href);
   }
 }
 
 export { verifyTextAndLink };
-

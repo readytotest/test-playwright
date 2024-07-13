@@ -8,20 +8,26 @@
 // |                                                                        |
 // |________________________________________________________________________|
 
-
-import { expect, Page } from '@playwright/test';
+import { Page } from "@playwright/test";
 
 async function getHrefAndCopyToClipboard(page: Page, id: string) {
-    // Find the element by data-testid and get its href
-    const link = await page.locator(`[data-testid="${id}"]`);
-    const href = await link.getAttribute('href');
+  // Find the element by data-testid and get its href
+  const link = page.locator(`[data-testid="${id}"]`);
+  const href = await link.getAttribute("href");
 
-    // Copy the href to clipboard if it exists, otherwise log an error
-    href 
-        ? await page.evaluate((href) => {
-            navigator.clipboard.writeText(`https://readytotest.github.io${href}`); // Prepend first part of URL to relative href
-          }, href)
-        : console.error('href attribute not found on the element');
+  // Copy the href to clipboard if it exists, otherwise log an error
+  if (href) {
+    try {
+      await page.evaluate((href) => {
+        return navigator.clipboard.writeText(`https://readytotest.github.io${href}`);
+      }, href);
+      console.log("Href copied to clipboard.");
+    } catch (error) {
+      console.error("Error copying href to clipboard:", error);
+    }
+  } else {
+    console.error("href attribute not found on the element");
+  }
 }
 
 export { getHrefAndCopyToClipboard };

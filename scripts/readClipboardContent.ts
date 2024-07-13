@@ -5,7 +5,7 @@
 // | a value.                                    |
 // -----------------------------------------------
 
-import { Page } from '@playwright/test';
+import { Page } from "@playwright/test";
 
 async function readClipboardContent(page: Page): Promise<string> {
   return await page.evaluate(async () => {

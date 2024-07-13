@@ -10,9 +10,8 @@
    └───────────────────────────────────────────────────────┘
 */
 
-import { Page, test } from "@playwright/test";
+import { test } from "@playwright/test";
 import { goToIndexHtm } from "@scripts/navigation";
-import { homePageObject } from "@pages/homePageObject";
 import { weatherAlertPageObject } from "@pages/weatherAlertPageObject";
 import { getHrefAndCopyToClipboard } from "@scripts/getHrefCopyToClipboard";
 import { readClipboardContent } from "@scripts/readClipboardContent";
@@ -29,20 +28,14 @@ import testData from "@test-data/testData";
 // |_________________________________________________________________|
 
 for (let i = 0; i <= 0; i++) {
-test.describe('Test the weather alerts page', () => {
-  
+  test.describe("Test the weather alerts page", () => {
+    test.beforeEach(async ({ page }) => {
+      console.log(`Running ${test.info().title}`);
+      await goToIndexHtm(page);
+    });
 
-  test.beforeEach(async ({ page }) => {
-    console.log(`Running ${test.info().title}`);
-    // Initialize pageObjectHome to hold the home page object for primary page
-    const pageObjectHome = homePageObject(page);
-    await goToIndexHtm(page);
-    
-  });
-  
-test(`weather page test run:${i}`, async ({ page, browser }) => {
-
-/* _______________________________________________________________
+    test(`weather page test run:${i}`, async ({ page, browser }) => {
+      /* _______________________________________________________________
   |                                                               |
   |   I'm demonstrating that you can use Playwright to open up    |
   |   two unique browser sessions during the test run. This would |
@@ -56,33 +49,31 @@ test(`weather page test run:${i}`, async ({ page, browser }) => {
   |_______________________________________________________________|
 */
 
-// Create a new browser context, which represents an isolated browser session.
-const secondaryContext = await browser.newContext();
+      // Create a new browser context, which represents an isolated browser session.
+      const secondaryContext = await browser.newContext();
 
-// Create a new page within the secondary browser context.
-const secondaryPage = await secondaryContext.newPage();
+      // Create a new page within the secondary browser context.
+      const secondaryPage = await secondaryContext.newPage();
 
-// Initialize pageObjectweather to hold the weather alert page object for secondaryPage
-const pageObjectweather = weatherAlertPageObject(secondaryPage);
-  
-//Find the element of the weather link page by data-testid and get its href
-await getHrefAndCopyToClipboard(page, "weather-alerts");
+      // Initialize pageObjectweather to hold the weather alert page object for secondaryPage
+      const pageObjectweather = weatherAlertPageObject(secondaryPage);
 
-// Read the copied link from the clipboard using the readClipboardContent function
-const copiedFromClipboard = await readClipboardContent(page);
+      //Find the element of the weather link page by data-testid and get its href
+      await getHrefAndCopyToClipboard(page, "weather-alerts");
 
-// Open a unique (2nd) browser session and navigate to the copied link.
-// Here's where if you're watching the test run in headed mode, you'll see the second browser session appear.
-await secondaryPage.goto(copiedFromClipboard);
+      // Read the copied link from the clipboard using the readClipboardContent function
+      const copiedFromClipboard = await readClipboardContent(page);
 
-// In the (2nd) browser, it expects page to display weather alerts for Alaska
-await pageObjectweather.verifyWeatherTitle(testData.weatherAlertData.alertTitle, { ignoreCase: true });
-});
+      // Open a unique (2nd) browser session and navigate to the copied link.
+      // Here's where if you're watching the test run in headed mode, you'll see the second browser session appear.
+      await secondaryPage.goto(copiedFromClipboard);
 
-test.afterEach(async ({ browser }) => {
-  console.log(`Completed ${test.info().title}`)
-});
+      // In the (2nd) browser, it expects page to display weather alerts for Alaska
+      await pageObjectweather.verifyWeatherTitle(testData.weatherAlertData.alertTitle, { ignoreCase: true });
+    });
 
-});
-
+    test.afterEach(() => {
+      console.log(`Completed ${test.info().title}`);
+    });
+  });
 }

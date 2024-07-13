@@ -8,13 +8,13 @@
    └───────────────────────────────────────────────────────┘
 */
 
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
-  testDir: './tests',
+  testDir: "./tests",
   testIgnore: [
-    '**/indexHtm-old.spec.ts',  // Exclude this specific file in any subdirectory
-    '**/weatherAlerts-old.spec.ts' // Exclude another specific file in any subdirectory
+    //'**/indexHtm-old.spec.ts',  // Exclude this specific file in any subdirectory
+    //'**/weatherAlerts-old.spec.ts' // Exclude another specific file in any subdirectory
   ],
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -25,35 +25,34 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   //workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: "html",
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    
     //Slow the tests down so I can watch them and see what's happening
     launchOptions: {
-       slowMo: 2000,
-     },
+      slowMo: 2000,
+    },
 
     //Show the browser while running the test
-      headless: false,
-      screenshot: 'on',
-      channel: "chrome",
-      video: 'on',
+    headless: false,
+    screenshot: "on",
+    channel: "chrome",
+    video: "on",
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: "on-first-retry",
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { 
-        ...devices['Desktop Chrome'],
-        permissions: ["clipboard-read", "clipboard-write"]
-       },
+      name: "chromium",
+      use: {
+        ...devices["Desktop Chrome"],
+        permissions: ["clipboard-read", "clipboard-write"],
+      },
     },
 
     // {
