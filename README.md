@@ -29,6 +29,15 @@ The main entry point for the Playwright scripts is located in `scripts/navigatio
 
 <b>NOTE!</b> If you try to run these scripts on your computer they will fail because there is no local server running and the files for the website exist in a different repo. If you want to run these tests, it's easiest to just swap the `localHost` variable for `production` in the navigation.ts script. This will allow you to run these tests against the live site. Otherwise, you would need to also clone my main repo, open both repos in VSCode, start the server, and then run the tests.
 
+## Code Quality Checks on Commit
+
+This project uses Husky along with ESLint, Prettier, and lint-staged to enforce code quality checks on staged files before each commit. Here's how it works:
+
+- **Husky**: Configured to run `lint-staged` before each commit.
+  
+- **lint-staged**: Executes ESLint for linting and Prettier for code formatting specifically on staged files (`*.{js,jsx,ts,tsx}`).
+
+
 ## Contributions
 
 Feel free to contribute to this project by forking the repo and creating and submitting a pull request.
