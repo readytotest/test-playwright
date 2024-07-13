@@ -1,14 +1,24 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"extensions": {
-		"recommendations": [
-			"ms-vscode.vscode-typescript-tslint-plugin",
-			"dbaeumer.vscode-eslint",
-			"msjsdiag.debugger-for-chrome"
-		]
-	}
+  "folders": [
+    {
+      "path": ".",
+    },
+  ],
+  "extensions": {
+    "recommendations": [
+      "ms-vscode.vscode-typescript-tslint-plugin",
+      "dbaeumer.vscode-eslint",
+      "msjsdiag.debugger-for-chrome",
+    ],
+  },
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2, // Adjust tab size as per your preference
+    "editor.detectIndentation": false, // Disable indentation detection
+    "editor.insertSpaces": true, // Use spaces instead of tabs
+  },
 }
