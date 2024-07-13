@@ -65,7 +65,7 @@ export const homePageObject= (page: Page) => {
   };
 
   const clickFeedbackWidget = async () => {
-    await page.locator('[class="widget__actor__text"]').click();
+    await page.getByLabel("Send Message").click();
   };
 
   const fillFeedbackWidgetNameField = async (widgetNameField: string) => {
@@ -79,6 +79,7 @@ export const homePageObject= (page: Page) => {
   const fillFeedbackWidgetMessageField = async (widgetMessageField: string) => {
     await page.locator('[id="message"]').fill(`${widgetMessageField}\n`);
     await typeTodaysDate(page);
+    console.log(widgetMessageField);
   };
 
   const clickFeedbackWidgetSendNowButton = async () => {
