@@ -7,7 +7,7 @@
       "@test-data/*": ["test-data/*"],
       "@pages/*": ["pages/*"]
     },
-    "module": "ES6",
+    "module": "CommonJS",
     "target": "ES2021",
     "strict": true,
     "esModuleInterop": true
