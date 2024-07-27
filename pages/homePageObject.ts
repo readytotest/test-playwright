@@ -43,7 +43,7 @@ export const homePageObject = (page: Page) => {
       console.log("✅ Success: Dog GIF has the correct ID ('dog-run').");
     } catch (error) {
       // Log the error message
-      console.log("🥴 Verification failed");
+      console.log("🥴 Verification failed:", error);
 
       // Rethrow the error to ensure proper failure reporting
       throw error;
