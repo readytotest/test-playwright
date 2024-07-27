@@ -23,6 +23,33 @@ export const homePageObject = (page: Page) => {
 
   // Public interface
 
+  const verifyDogGif = async () => {
+    console.log("Starting verification: Checking if dog GIF is visible and has the correct ID");
+
+    const getDogGif = () => page.locator('[data-testid="dog-run-gif"]');
+    const dogGif = getDogGif();
+
+    try {
+      // Ensure the element is present
+      await page.waitForSelector('[data-testid="dog-run-gif"]');
+
+      // Check if the GIF is visible
+      await expect(dogGif).toBeVisible();
+      console.log("✅ Success: Dog GIF is visible!");
+
+      // Verify the ID attribute
+      const id = await dogGif.getAttribute("id");
+      expect(id).toBe("dog-run");
+      console.log("✅ Success: Dog GIF has the correct ID ('dog-run').");
+    } catch (error) {
+      // Log the error message
+      console.log("🥴 Verification failed");
+
+      // Rethrow the error to ensure proper failure reporting
+      throw error;
+    }
+  };
+
   // Programmatically force the browser to download a file without relying on user interaction,
   // otherwise some files open witin the browser itself and I want to download it.
   const initiateDownload = async (hrefAttribute: string, fileName: string) => {
@@ -47,13 +74,13 @@ export const homePageObject = (page: Page) => {
     const filePath = `./downloads/${download.suggestedFilename()}`;
     await download.saveAs(filePath);
     // Log the actual suggested filename and expected filename
-    console.log(`Actual Suggested Filename: ${download.suggestedFilename()}`);
-    console.log(`Expected Filename: ${fileName}`);
+    console.log(`✅ Actual Suggested Filename: ${download.suggestedFilename()}`);
+    console.log(`✅ Expected Filename: ${fileName}`);
     expect(download.suggestedFilename()).toBe(fileName);
     fs.access(filePath, fs.constants.F_OK, (error) => {
       expect(error).toBe(null);
     });
-    console.log(`File '${fileName}' downloaded and saved successfully at '${filePath}'.`);
+    console.log(`✅ File '${fileName}' downloaded and saved successfully at '${filePath}'.`);
     await page.waitForTimeout(500);
   };
 
@@ -80,7 +107,7 @@ export const homePageObject = (page: Page) => {
   const fillFeedbackWidgetMessageField = async (widgetMessageField: string) => {
     await page.locator('[id="message"]').fill(`${widgetMessageField}\n`);
     await typeTodaysDate(page);
-    console.log(widgetMessageField);
+    console.log(`✅ ${widgetMessageField}`);
   };
 
   const clickFeedbackWidgetSendNowButton = async () => {
@@ -102,6 +129,7 @@ export const homePageObject = (page: Page) => {
     fillFeedbackWidgetEmailField,
     fillFeedbackWidgetMessageField,
     clickFeedbackWidgetSendNowButton,
+    verifyDogGif,
     verifyFeedbackWidgetMessageSent,
   };
 };

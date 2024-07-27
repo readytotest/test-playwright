@@ -36,7 +36,7 @@ for (let i = 0; i <= 0; i++) {
     let pageObjectHome: ReturnType<typeof homePageObject>;
 
     test.beforeEach(async ({ page }) => {
-      console.log(`Running ${test.info().title}`);
+      console.log(`✅ Running ${test.info().title}`);
       // Initialize pageObjectHome with the page object
       pageObjectHome = homePageObject(page);
       await goToIndexHtm(page);
@@ -69,6 +69,8 @@ for (let i = 0; i <= 0; i++) {
         testData.indexHtmData.philosophyText,
         testData.indexHtmData.philosophyHref
       );
+
+      await pageObjectHome.verifyDogGif();
 
       // Download a file and verify it
       await pageObjectHome.initiateDownload("./html/vid/weatherAlertTest.mp4", "weatherAlertTest.mp4");
@@ -106,7 +108,7 @@ for (let i = 0; i <= 0; i++) {
     });
 
     test.afterEach(() => {
-      console.log(`Completed ${test.info().title}`);
+      console.log(`✅ Completed ${test.info().title}`);
     });
   });
 }
