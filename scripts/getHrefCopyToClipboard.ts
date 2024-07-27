@@ -21,7 +21,7 @@ async function getHrefAndCopyToClipboard(page: Page, id: string) {
       await page.evaluate((href) => {
         return navigator.clipboard.writeText(`https://readytotest.github.io${href}`);
       }, href);
-      console.log("Href copied to clipboard.");
+      console.log("✅ Href copied to clipboard.");
     } catch (error) {
       console.error("Error copying href to clipboard:", error);
     }

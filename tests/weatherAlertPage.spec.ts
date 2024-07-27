@@ -30,7 +30,7 @@ import testData from "@test-data/testData";
 for (let i = 0; i <= 0; i++) {
   test.describe("Test the weather alerts page", () => {
     test.beforeEach(async ({ page }) => {
-      console.log(`Running ${test.info().title}`);
+      console.log(`✅ Running ${test.info().title}`);
       await goToIndexHtm(page);
     });
 
@@ -73,7 +73,7 @@ for (let i = 0; i <= 0; i++) {
     });
 
     test.afterEach(() => {
-      console.log(`Completed ${test.info().title}`);
+      console.log(`✅ Completed ${test.info().title}`);
     });
   });
 }

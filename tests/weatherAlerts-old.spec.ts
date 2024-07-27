@@ -21,7 +21,7 @@ let indexHtmPage: IndexHtmPage;
 for (let i = 0; i <= 1; i++) {
   test.describe("Test the weather alerts page", () => {
     test.beforeEach(async ({ page }) => {
-      console.log(`Running ${test.info().title}`);
+      console.log(`✅ Running ${test.info().title}`);
       weatherAlertPage = new WeatherAlertPage(page);
       indexHtmPage = new IndexHtmPage(page);
       await indexHtmPage.goto();

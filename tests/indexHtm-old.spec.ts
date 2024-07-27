@@ -22,7 +22,7 @@ let indexHtmPage: IndexHtmPage;
 for (let i = 0; i <= 1; i++) {
   test.describe("Test the index htm page", () => {
     test.beforeEach(async ({ page }) => {
-      console.log(`Running ${test.info().title}`);
+      console.log(`✅ Running ${test.info().title}`);
       indexHtmPage = new IndexHtmPage(page);
       await indexHtmPage.goto();
     });
