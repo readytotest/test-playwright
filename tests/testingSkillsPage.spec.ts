@@ -10,7 +10,7 @@ test("philosophy page test", async ({ page }) => {
   const localHost = "http://localhost:3000"; // eslint-disable-line @typescript-eslint/no-unused-vars
   const production = "https://readytotest.github.io"; // eslint-disable-line @typescript-eslint/no-unused-vars
   //Swap out the localHost variable below with production if you want to test the live site
-  await page.goto(production);
+  await page.goto(localHost);
 
   //Or to make navigation more simple just use this... await page.goto("https://readytotest.github.io")
 
