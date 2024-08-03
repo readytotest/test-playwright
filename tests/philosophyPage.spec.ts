@@ -13,7 +13,7 @@ test("philosophy page test", async ({ page }) => {
   // Perform navigation to the index page
   await goToIndexHtm(page);
 
-  // Use the home page object to click the link to the philosophy page
+  // Use the home page object directly
   await homePageObject(page).clickPhilosophyLink();
 
   // Initialize the philosophy page object, which I didn't do above for the homepageObject
