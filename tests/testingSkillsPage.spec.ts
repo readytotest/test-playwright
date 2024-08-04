@@ -5,7 +5,7 @@ I won't import any helper scripts either.
 
 import { test, expect } from "@playwright/test";
 
-test("philosophy page test", async ({ page }) => {
+test("testing skills page", async ({ page }) => {
   // Perform navigation to the index page
   const localHost = "http://localhost:3000"; // eslint-disable-line @typescript-eslint/no-unused-vars
   const production = "https://readytotest.github.io"; // eslint-disable-line @typescript-eslint/no-unused-vars
