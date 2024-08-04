@@ -24,9 +24,9 @@ export const philosophyPageObject = (page: Page) => {
   // Set default value for n, unless passed as an argument in the spec
   const verifyThoughtsQa = async (n = 0) => {
     // Instead of getByTestID, here we are using partial match of 'start with' class name for demonstration purposes.
-    // The full class name is thoughts. This works well if you have dynamic class names where the first part is static
+    // The full class name is sections. This works well if you have dynamic class names where the first part is static
     // but at the end of the name they have numbers or some other changing text.
-    const element = page.locator("[class^='tho']");
+    const element = page.locator("[class^='sec']");
     await expect(element.nth(n)).toBeVisible();
     await expect(element.nth(n)).toHaveText("Thoughts on Software Quality Assurance");
   };
@@ -36,14 +36,14 @@ export const philosophyPageObject = (page: Page) => {
   // to handle it all, but this is for demo purposes, so in this page object we are writing out a bunch of separate functions
   // just to show different styles and ways of doing things.
   const verifyThoughtsManual = async (n = 0) => {
-    await expect(page.locator(".thoughts").nth(n)).toContainText("Manual");
+    await expect(page.locator(".sections").nth(n)).toContainText("Manual");
   };
 
   // Here we will use a parameter for the text it contains and pass it as an argument in the spec
   // when calling the function.
   const verifyThoughtsAutomation = async (text: string) => {
-    // Here we are using partial match of 'contains' class name instead of the full class name 'thoughts'.
-    await expect(page.locator('[class*="ughts"]').last()).toHaveText(text);
+    // Here we are using partial match of 'contains' class name instead of the full class name 'sections'.
+    await expect(page.locator('[class*="ction"]').last()).toHaveText(text);
   };
 
   return {
