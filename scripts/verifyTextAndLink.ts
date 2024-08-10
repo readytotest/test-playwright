@@ -8,7 +8,35 @@
  * if provided.                                *
  **********************************************/
 
-import { expect, Page } from "@playwright/test";
+import { Page, Locator, expect } from "@playwright/test";
+
+async function verifyTextAndLink(
+  page: Page,
+  id: string,
+  text: string,
+  href?: string,
+  isVisible: boolean = true // Default to true if not provided
+) {
+  const element: Locator = page.locator(`[data-testid="${id}"]`);
+
+  // Verify text content
+  await expect(element, `Element with data-testid="${id}" should have text "${text}"`).toHaveText(text);
+
+  // Conditionally verify visibility using a ternary operator
+  // If `isVisible` is true, assert that the element is visible; otherwise, assert that it is hidden
+  // Custom error messages are provided to specify the expected visibility state
+  await (isVisible
+    ? expect(element, `Element with data-testid="${id}" should be visible`).toBeVisible()
+    : expect(element, `Element with data-testid="${id}" should not be visible`).toBeHidden());
+
+  // Verify href attribute if provided
+  const actualHref = href ? await element.getAttribute("href") : undefined;
+  href !== undefined && expect(actualHref).toBe(href);
+}
+
+export { verifyTextAndLink };
+
+/* import { expect, Page } from "@playwright/test";
 
 async function verifyTextAndLink(page: Page, id: string, text: string, href?: string) {
   const element = page.locator(`[data-testid="${id}"]`);
@@ -24,4 +52,4 @@ async function verifyTextAndLink(page: Page, id: string, text: string, href?: st
   }
 }
 
-export { verifyTextAndLink };
+export { verifyTextAndLink }; */
