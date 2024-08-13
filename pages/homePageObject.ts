@@ -30,10 +30,16 @@ export const homePageObject = (page: Page) => {
     const dogGif = getDogGif();
 
     try {
-      // Ensure the element is present
-      await page.waitForSelector('[data-testid="dog-run-gif"]');
+      // Wait For Selector:
+      // Handy if you have timing issues, for example
+      // the assertion on the next line might check
+      // too quickly before the element is fully visible
+      // It could be a menu that doesn't close fast enough
+      // before the assertion or a checking that a chat message
+      // is visible before it actually appears.
+      await page.waitForSelector('[data-testid="dog-run-gif"]', { state: "visible" });
 
-      // Check if the GIF is visible
+      // Assert element is visible
       await expect(dogGif).toBeVisible();
       console.log("✅ Success: Dog GIF is visible!");
 
