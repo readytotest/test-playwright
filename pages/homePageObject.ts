@@ -94,15 +94,15 @@ export const homePageObject = (page: Page) => {
     await expect(page).toHaveTitle(pageTitle);
   };
 
-  // Could combine the following two functions into one and use one parameter for the section ID and another for text
-  // and pass the two arguments when calling the function, but we'll just keep two separate functions I guess
-
   const clickWeatherAlertLink = async () => {
+    await findWeatherSection()
+      .locator("a", { hasText: "View weather alerts on my page" })
+      .waitFor({ state: "visible" });
     await findWeatherSection().locator("a", { hasText: "View weather alerts on my page" }).click();
   };
 
   const clickPhilosophyLink = async () => {
-    await expect(page.getByTestId("qa-philosophy")).toBeVisible();
+    await page.waitForSelector("[data-testid='qa-philosophy']", { state: "visible" });
     await page.locator('a:text("QA philosophy")').click();
   };
 
