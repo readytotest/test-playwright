@@ -23,7 +23,7 @@ async function verifyTextAndLink(
   await expect(element, `Element with data-testid="${id}" should have text "${text}"`).toHaveText(text);
 
   // Conditionally verify visibility using a ternary operator
-  // If `isVisible` is true, assert that the element is visible; otherwise, assert that it is hidden
+  // If `isVisible` is true, assert that the element is visible; if false, assert that it is hidden
   // Custom error messages are provided to specify the expected visibility state
   await (isVisible
     ? expect(element, `Element with data-testid="${id}" should be visible`).toBeVisible()
