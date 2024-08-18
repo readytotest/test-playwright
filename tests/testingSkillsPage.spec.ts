@@ -3,7 +3,7 @@
 import { test, expect } from "@playwright/test";
 
 test("testing skills page", async ({ page }) => {
-  await page.goto("https://readytotest.github.io");
+  await page.goto("http://localhost:3000");
   await expect(page.getByTestId("testing-skills")).toBeVisible();
   await page.locator('a:text("Testing Skills")').click();
   await expect(page.locator("body")).toContainText("Testing Skills");
