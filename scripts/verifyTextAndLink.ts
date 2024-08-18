@@ -5,11 +5,11 @@ import { Page, Locator, expect } from "@playwright/test";
  * content, and href attribute of an element   *
  * identified by data-testid.                  *
  *                                             *
- * Arguments:                                 *
+ * Arguments:                                  *
  * - page: Playwright Page object              *
  * - isVisible: Boolean flag indicating if     *
- *   the element should be visible. This is a *
- *   required parameter.                      *
+ *   the element should be visible. This is a  *
+ *   required parameter.                       *
  * - id: The data-testid of the element        *
  * - text: Optional. Text to verify if the     *
  *   element is visible. If `isVisible` is     *
@@ -18,9 +18,10 @@ import { Page, Locator, expect } from "@playwright/test";
  *   if the element is visible. If `isVisible` *
  *   is false, do not pass this argument.      *
  *                                             *
- * Note:                                      *
- * - If `isVisible` is false, then do not pass *
- *   `text` or `href` arguments.               *
+ * Note:                                       *
+ * - This function is designed to handle       *
+ * multiple test scenarios and is  mostly for  *
+ * for tinkering and experimentation           *
  **********************************************/
 
 async function verifyTextAndLink(
