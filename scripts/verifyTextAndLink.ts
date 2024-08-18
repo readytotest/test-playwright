@@ -1,11 +1,25 @@
 /**********************************************
- * This function is designed for generic use   *
- * across pages as a helper utility.           *
- * It verifies the text content and visibility *
- * of an element identified by testID.         *
- * The 'href' parameter is optional and is     *
- * used to verify the element's href attribute *
- * if provided.                                *
+ * This function is a utility for verifying    *
+ * the text content, visibility, and href      *
+ * attribute of an element identified by a     *
+ * data-testid.                               *
+ *                                             *
+ * Arguments:                                 *
+ * - page: Playwright Page object              *
+ * - id: The data-testid of the element        *
+ * - text: Optional. Text to verify if the     *
+ *   element is visible. If `isVisible` is     *
+ *   false, do not include the `text` argument.*
+ * - href: Optional. Href attribute to verify  *
+ * - isVisible: Boolean flag indicating if     *
+ *   the element should be visible (default is *
+ *   true).                                    *
+ *                                             *
+ * Note:                                      *
+ * - If `isVisible` is set to false, do not    *
+ *   include the `text` argument, as it will   *
+ *   not be relevant for elements that are     *
+ *   expected to be hidden.                   *
  **********************************************/
 
 import { Page, Locator, expect } from "@playwright/test";
@@ -13,25 +27,27 @@ import { Page, Locator, expect } from "@playwright/test";
 async function verifyTextAndLink(
   page: Page,
   id: string,
-  text: string,
-  href?: string,
+  text?: string, // Text arg optional
+  href?: string, // Href arg optional
   isVisible: boolean = true // Default to true if not provided
 ) {
   const element: Locator = page.locator(`[data-testid="${id}"]`);
 
-  // Verify text content
-  await expect(element, `Element with data-testid="${id}" should have text "${text}"`).toHaveText(text);
-
-  // Conditionally verify visibility using a ternary operator
-  // If `isVisible` is true, assert that the element is visible; if false, assert that it is hidden
-  // Custom error messages are provided to specify the expected visibility state
+  // Verify visibility
   await (isVisible
     ? expect(element, `Element with data-testid="${id}" should be visible`).toBeVisible()
     : expect(element, `Element with data-testid="${id}" should not be visible`).toBeHidden());
 
+  // Verify text content if provided
+  if (text !== undefined) {
+    await expect(element, `Element with data-testid="${id}" should have text "${text}"`).toHaveText(text);
+  }
+
   // Verify href attribute if provided
-  const actualHref = href ? await element.getAttribute("href") : undefined;
-  href !== undefined && expect(actualHref).toBe(href);
+  if (href !== undefined) {
+    const actualHref = await element.getAttribute("href");
+    expect(actualHref, `Element with data-testid="${id}" should have href="${href}"`).toBe(href);
+  }
 }
 
 export { verifyTextAndLink };
