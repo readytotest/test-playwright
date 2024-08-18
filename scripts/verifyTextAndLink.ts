@@ -2,26 +2,36 @@ import { Page, Locator, expect } from "@playwright/test";
 
 /**********************************************
  * This function verifies the visibility, text *
- * content, and href attribute of an element   *
- * identified by data-testid.                  *
+ * content, and `href` attribute of an element *
+ * identified by `data-testid`.                *
  *                                             *
  * Arguments:                                  *
- * - page: Playwright Page object              *
+ * - page: Playwright Page object.             *
+ *   This is a required parameter.             *
+ *                                             *
  * - isVisible: Boolean flag indicating if     *
  *   the element should be visible. This is a  *
  *   required parameter.                       *
- * - id: The data-testid of the element        *
+ *                                             *
+ * - id: The `data-testid` of the element.     *
+ *   This is a required parameter.             *
+ *                                             *
  * - text: Optional. Text to verify if the     *
  *   element is visible. If `isVisible` is     *
  *   false, do not pass this argument.         *
- * - href: Optional. Href attribute to verify  *
- *   if the element is visible. If `isVisible` *
- *   is false, do not pass this argument.      *
+ *                                             *
+ * - href: Optional. `href` attribute to       *
+ *   verify if the element is visible. If      *
+ *   `isVisible` is false, do not pass this    *
+ *   argument. If `href` is provided, `text`   *
+ *   must also be provided. This ensures the   *
+ *   function correctly interprets the         *
+ *   parameters.                               *
  *                                             *
  * Note:                                       *
  * - This function is designed to handle       *
- * multiple test scenarios and is  mostly for  *
- * for tinkering and experimentation           *
+ *   multiple test scenarios and is mostly     *
+ *   for tinkering and experimentation.        *
  **********************************************/
 
 async function verifyTextAndLink(
