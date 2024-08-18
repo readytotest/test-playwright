@@ -43,6 +43,11 @@ async function verifyTextAndLink(
 ) {
   const element: Locator = page.locator(`[data-testid="${id}"]`);
 
+  /* _____________________________________________________________________
+   If an assertion fails, the error message will include the `data-testid`
+   of the element, and the expected state, text, or attribute value.  
+   _______________________________________________________________________ */
+
   // Verify visibility
   await (isVisible
     ? expect(element, `Element with data-testid="${id}" should be visible`).toBeVisible()
