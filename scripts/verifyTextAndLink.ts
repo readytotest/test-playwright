@@ -1,35 +1,34 @@
+import { Page, Locator, expect } from "@playwright/test";
+
 /**********************************************
- * This function is a utility for verifying    *
- * the text content, visibility, and href      *
- * attribute of an element identified by a     *
- * data-testid.                               *
+ * This function verifies the visibility, text *
+ * content, and href attribute of an element   *
+ * identified by data-testid.                  *
  *                                             *
  * Arguments:                                 *
  * - page: Playwright Page object              *
+ * - isVisible: Boolean flag indicating if     *
+ *   the element should be visible. This is a *
+ *   required parameter.                      *
  * - id: The data-testid of the element        *
  * - text: Optional. Text to verify if the     *
  *   element is visible. If `isVisible` is     *
- *   false, do not include the `text` argument.*
+ *   false, do not pass this argument.         *
  * - href: Optional. Href attribute to verify  *
- * - isVisible: Boolean flag indicating if     *
- *   the element should be visible (default is *
- *   true).                                    *
+ *   if the element is visible. If `isVisible` *
+ *   is false, do not pass this argument.      *
  *                                             *
  * Note:                                      *
- * - If `isVisible` is set to false, do not    *
- *   include the `text` argument, as it will   *
- *   not be relevant for elements that are     *
- *   expected to be hidden.                   *
+ * - If `isVisible` is false, then do not pass *
+ *   `text` or `href` arguments.               *
  **********************************************/
-
-import { Page, Locator, expect } from "@playwright/test";
 
 async function verifyTextAndLink(
   page: Page,
-  id: string,
-  text?: string, // Text arg optional
-  href?: string, // Href arg optional
-  isVisible: boolean = true // Default to true if not provided
+  isVisible: boolean, // Required
+  id: string, // Required
+  text?: string, // Optional
+  href?: string // Optional
 ) {
   const element: Locator = page.locator(`[data-testid="${id}"]`);
 

@@ -50,21 +50,24 @@ for (let i = 0; i <= 0; i++) {
       await pageObjectHome.verifyPageTitle(testData.indexHtmData.pageTitle);
 
       // Verify index htm page copy
-      await verifyTextAndLink(page, "intro-page-copy", testData.indexHtmData.introPageCopy);
+      await verifyTextAndLink(page, true, "intro-page-copy", testData.indexHtmData.introPageCopy);
       await verifyTextAndLink(
         page,
+        true,
         "weather-alerts",
         testData.indexHtmData.weatherAlertLinkText,
         testData.indexHtmData.weatherAlertHref
       );
       await verifyTextAndLink(
         page,
+        true,
         "testing-skills",
         testData.indexHtmData.testSkillsText,
         testData.indexHtmData.testSkillsHref
       );
       await verifyTextAndLink(
         page,
+        true,
         "qa-philosophy",
         testData.indexHtmData.philosophyText,
         testData.indexHtmData.philosophyHref
