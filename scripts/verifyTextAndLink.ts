@@ -35,7 +35,7 @@ import { Page, Locator, expect } from "@playwright/test";
  **********************************************/
 
 async function verifyTextAndLink(
-  page: Page,
+  page: Page, // Required
   isVisible: boolean, // Required
   id: string, // Required
   text?: string, // Optional
