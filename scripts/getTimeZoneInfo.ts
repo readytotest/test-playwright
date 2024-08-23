@@ -34,7 +34,7 @@ export const getTimeZoneInfo = () => {
   const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
   const systemType = isGitHubActions ? "GitHub Actions Environment" : "Local Machine";
 
-  console.log(`🖥️ System Type: ${systemType}`);
+  console.log(`💻 System Type: ${systemType}`);
   console.log(`🌎 Time Zone of ${systemType}: ${timeZone}`);
   console.log(`📅 Date in ${systemType}: ${dateString}`);
   console.log(`🕒 Time in ${systemType}: ${timeString}`);
