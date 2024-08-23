@@ -12,7 +12,7 @@
  * │                                                        │
  * │  This can come in handy for example when you run a     │
  * │  test in your local time, but the GH runner default    │
- * │  TZ is GMT 0. For example, if you type a date for      │
+ * │  TZ is UTC.   For example, if you type a date for      │
  * │  today's date, but the runner's time zone is ahead,    │
  * │  the runner might type tomorrow's date, causing your   │
  * │  test to fail because the assertion was expecting      │
