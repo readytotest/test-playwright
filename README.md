@@ -18,9 +18,9 @@ The scripts in this repository are designed to be executed within a [GitHub Acti
 <br>
 When a pull request or commit occurs in the primary repository, the following workflow is triggered:
 
-1. Both repos are [checked out](https://github.com/readytotest/readytotest.github.io/blob/63b6b47538ca4d96b0e905e945c218be53f7610d/.github/workflows/playwright-mysite.yml#L44) (the primary repo that contains my website and this repo that has the Playwright specs)
-2. A local Node.js server is [started](https://github.com/readytotest/readytotest.github.io/blob/63b6b47538ca4d96b0e905e945c218be53f7610d/.github/workflows/playwright-mysite.yml#L69) within the [GitHub runner](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners) environment
-3. Playwright scripts located in this repo execute tests against the locally hosted [GitHub pages site](https://github.com/readytotest/readytotest.github.io/blob/63b6b47538ca4d96b0e905e945c218be53f7610d/index.htm)
+1. Both repos are checked out (the primary repo that contains my website and this repo that has the Playwright specs)
+2. A local Node.js server is started within the GitHub runner environment
+3. Playwright scripts located in this repo execute tests against the locally hosted GitHub pages site.
    in my primary repo.
 
 ## Usage
@@ -34,9 +34,7 @@ The main entry point for the Playwright scripts is located in `scripts/navigatio
 This project uses Husky along with ESLint, Prettier, and lint-staged to enforce code quality checks on staged files before each commit. Here's how it works:
 
 - **Husky**: Configured to run `lint-staged` before each commit.
-  
 - **lint-staged**: Executes ESLint for linting and Prettier for code formatting specifically on staged files (`*.{js,jsx,ts,tsx}`).
-
 
 ## Contributions
 
