@@ -17,6 +17,7 @@ import testData from "@test-data/testData";
 import { testIdGenerator } from "@scripts/testIdGenerator";
 import { verifyTextAndLink } from "@scripts/verifyTextAndLink";
 import { goToIndexHtm } from "@scripts/navigation";
+import { getTimeZoneInfo } from "@scripts/getTimeZoneInfo";
 const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 
 // ___________________________________________________________________
@@ -43,8 +44,8 @@ for (let i = 0; i <= 0; i++) {
     });
 
     test(`home page test run:${i}`, async ({ page }) => {
-      // There a JS alert on this page, but Playwright automatically dismisses it
-      // https://playwright.dev/docs/dialogs
+      // Log TZ info of environment this script is running in
+      getTimeZoneInfo();
 
       // Verify title of index.htm
       await pageObjectHome.verifyPageTitle(testData.indexHtmData.pageTitle);
