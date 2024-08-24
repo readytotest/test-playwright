@@ -102,8 +102,8 @@ export const homePageObject = (page: Page) => {
   };
 
   const clickPhilosophyLink = async () => {
-    await page.waitForSelector("[data-testid='qa-philosophy']", { state: "visible" });
-    await page.locator('a:text("QA philosophy")').click();
+    await page.waitForSelector("[data-testid='qa-philosophy']", { state: "visible" }); // Don't need this, just an example
+    await page.getByTestId("qa-philosophy").click();
   };
 
   const clickFeedbackWidget = async () => {
