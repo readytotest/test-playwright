@@ -23,7 +23,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@faker-js/faker": "^9.0.3",
+    "@faker-js/faker": "^9.2.0",
     "@playwright/test": "^1.48.2",
     "@types/node": "^22.8.6",
     "@typescript-eslint/eslint-plugin": "^8.12.2",
