@@ -17,7 +17,7 @@ const testData = {
     philosophyHref: "/html/philosophy.htm",
   },
   weatherAlertData: {
-    alertTitle: "current watches, warnings, and advisories for alaska",
+    alertTitle: "current watches, warnings, and advisories for nevada",
   },
 };
 
