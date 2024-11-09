@@ -16,7 +16,7 @@ I use Playwright at my current job and I tinker 🧰🪛🛠️🚧 with it here
 
 The scripts in this repository are designed to be executed within a [GitHub Actions workflow](https://github.com/readytotest/readytotest.github.io/blob/main/.github/workflows/playwright-mysite.yml) that resides in my [primary repository](https://github.com/readytotest/readytotest.github.io).
 <br>
-When a pull request or commit occurs in the primary repository, the following workflow is triggered:
+When a pull request or push occurs in the primary repository, the following workflow is triggered:
 
 1. Both the primary repo that contains my website and this repo that has the Playwright specs are checked out.
 2. A local Node.js server is started within the GitHub runner environment.
