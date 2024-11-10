@@ -7,5 +7,9 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.formatOnSave": true,
-  "editor.language.brackets": []
+  "editor.language.brackets": [],
+  "sonarlint.connectedMode.project": {
+    "connectionId": "readytotest",
+    "projectKey": "readytotest_test-playwright"
+  }
 }
