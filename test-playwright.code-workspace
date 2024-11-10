@@ -6,9 +6,14 @@
   ],
   "extensions": {
     "recommendations": [
-      "ms-vscode.vscode-typescript-tslint-plugin",
       "dbaeumer.vscode-eslint",
-      "msjsdiag.debugger-for-chrome",
+      "esbenp.prettier-vscode",
+      "github.vscode-github-actions",
+      "GitHub.vscode-pull-request-github",
+      "ritwickdey.LiveServer",
+      "ms-playwright.playwright",
+      "vscode-icons-team.vscode-icons",
+      "SonarSource.sonarlint-vscode",
     ],
   },
   "settings": {
