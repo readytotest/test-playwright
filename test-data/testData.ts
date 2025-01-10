@@ -7,7 +7,7 @@ const testData = {
   },
   indexHtmData: {
     pageTitle: "Ready to Test (QA)",
-    introPageCopy: "Welcome to my testing ecosystem!",
+    introPageCopy: "This is my personal homepage where I've been tinkering",
     introPageCopy2: "Curious about the design choice of this page?",
     weatherAlertLinkText: "View weather alerts on my page",
     weatherAlertHref: "/html/weather-api.htm",
