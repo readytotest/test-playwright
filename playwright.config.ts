@@ -29,6 +29,8 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     //Slow the tests down so I can watch them and see what's happening
+    //One thing to be aware of is I've seen tests fail because they were too slow, but pass on normal speed
+    //So just keep that in mind
     launchOptions: {
       slowMo: 2000,
     },
