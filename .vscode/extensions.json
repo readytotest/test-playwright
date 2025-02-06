@@ -7,6 +7,7 @@
 		"ritwickdey.LiveServer",
 		"ms-playwright.playwright",
 		"vscode-icons-team.vscode-icons",
-    "SonarSource.sonarlint-vscode"
+    "SonarSource.sonarlint-vscode",
+    "GitHub.copilot"
 	]
 }
