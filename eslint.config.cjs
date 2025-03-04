@@ -1,4 +1,10 @@
-// Import necessary plugins
+/* 
+
+   https://eslint.org/docs/latest/rules/
+   https://typescript-eslint.io/rules/
+
+*/
+
 const typescriptPlugin = require("@typescript-eslint/eslint-plugin");
 const typescriptParser = require("@typescript-eslint/parser");
 const prettierPlugin = require("eslint-plugin-prettier");
