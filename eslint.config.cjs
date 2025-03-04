@@ -26,6 +26,7 @@ module.exports = [
       parser: typescriptParser,
       parserOptions: {
         project: "./tsconfig.json",
+        // eslint-disable-next-line no-undef
         tsconfigRootDir: __dirname,
       },
     },
@@ -38,6 +39,7 @@ module.exports = [
     files: ["**/*.js", "**/*.jsx", "**/*.cjs"],
     rules: {
       "no-unused-vars": "error",
+      "no-undef": "error",
     },
   },
 
