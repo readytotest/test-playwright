@@ -15,9 +15,9 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
+      "eslint --fix"
+    ],
+    "_comment": "Prettier is already handled by ESLint with eslint-plugin-prettier, so I'm excluding it from lint-staged"
   },
   "keywords": [],
   "author": "",
