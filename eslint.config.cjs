@@ -1,50 +1,40 @@
-/** @type {import('eslint').FlatConfig} */
-const typescriptParser = require("@typescript-eslint/parser"); // TypeScript parser
-const typescriptPlugin = require("@typescript-eslint/eslint-plugin"); // TypeScript plugin
-const prettierPlugin = require("eslint-plugin-prettier"); // Prettier plugin
+// Import necessary plugins
+const typescriptPlugin = require("@typescript-eslint/eslint-plugin");
+const typescriptParser = require("@typescript-eslint/parser");
+const prettierPlugin = require("eslint-plugin-prettier");
 
 module.exports = [
-  // Define the plugins at the top level (use object notation)
   {
     plugins: {
-      "@typescript-eslint": typescriptPlugin, // TypeScript plugin
-      prettier: prettierPlugin, // Prettier plugin
-    },
-  },
-
-  // Base config for JS/TS/JSX/TSX files
-  {
-    files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
-    languageOptions: {
-      parser: typescriptParser, // Use the TypeScript parser
-      parserOptions: {
-        project: "./tsconfig.json", // Path to tsconfig.json
-        tsconfigRootDir: __dirname, // Resolve tsconfig from the current directory
-      },
+      "@typescript-eslint": typescriptPlugin,
+      prettier: prettierPlugin,
     },
     rules: {
-      "no-undef": "error",
-      "no-unused-vars": "error",
+      "prettier/prettier": "error", // Apply Prettier formatting rule globally
     },
   },
 
-  // TypeScript-specific rules
   {
-    files: ["**/*.ts", "**/.tsx"],
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: {
+      parser: typescriptParser,
+      parserOptions: {
+        project: "./tsconfig.json",
+        tsconfigRootDir: __dirname,
+      },
+    },
     rules: {
       "@typescript-eslint/no-unused-vars": "error",
     },
   },
 
-  // Prettier integration
   {
-    files: ["*.js", "*.jsx", "*.ts", "*.tsx"],
+    files: ["**/*.js", "**/*.jsx", "**/*.cjs"],
     rules: {
-      "prettier/prettier": "error", // Prettier rule integration
+      "no-unused-vars": "error",
     },
   },
 
-  // Ignored files
   {
     ignores: [
       "node_modules/",
