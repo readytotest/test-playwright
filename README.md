@@ -10,7 +10,7 @@
 
 ## Note
 
-After cloning the repo, run npm install to set up dependencies.
+After cloning the repo, make sure you have [Node.js](https://nodejs.org/) installed, then run `npm install` to set up dependencies.
 
 ## Workflow
 
