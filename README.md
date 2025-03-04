@@ -8,9 +8,9 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/t/readytotest/test-playwright?style=social&color=%23FF69B4)](https://github.com/readytotest/test-playwright/commits/main/)
 [![GitHub last commit](https://img.shields.io/github/last-commit/readytotest/test-playwright?style=social)](https://github.com/readytotest/test-playwright/commits/main/)
 
-## Overview
+## Note
 
-I use Playwright at my current job and I tinker 🧰🪛🛠️🚧 with it here in my personal repo too!
+After cloning the repo, run npm install to set up dependencies.
 
 ## Workflow
 
