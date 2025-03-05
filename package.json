@@ -14,7 +14,7 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{js,jsx,ts,tsx,cjs}": [
       "eslint --fix"
     ],
     "_comment": "I changed it so Prettier is now being handled by ESLint with eslint-plugin-prettier. Thats's why I removed (prettier --write) from lint-staged"
