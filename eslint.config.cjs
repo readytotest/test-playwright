@@ -36,6 +36,12 @@ module.exports = [
   },
 
   {
+    globals: {
+      console: "readonly", // Allow 'console' as a read-only global variable
+    },
+  },
+
+  {
     files: ["**/*.js", "**/*.jsx", "**/*.cjs"],
     rules: {
       "no-unused-vars": "error",
