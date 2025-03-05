@@ -1,4 +1,5 @@
 {
+  "_comment": "If I remember right all these settings here, control the prettier extension, particularly automatic indentation.. I think? Been a while.",
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.insertSpaces": true,
