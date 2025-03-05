@@ -26,26 +26,24 @@ module.exports = [
       parser: typescriptParser,
       parserOptions: {
         project: "./tsconfig.json",
-        // eslint-disable-next-line no-undef
         tsconfigRootDir: __dirname,
       },
     },
     rules: {
-      "@typescript-eslint/no-unused-vars": "error",
-    },
-  },
-
-  {
-    globals: {
-      console: "readonly", // Allow 'console' as a read-only global variable
+      "@typescript-eslint/no-unused-vars": "error", // Check for unused vars in TypeScript files
     },
   },
 
   {
     files: ["**/*.js", "**/*.jsx", "**/*.cjs"],
+    languageOptions: {
+      globals: {
+        console: "readonly", // Allow 'console' as a read-only global variable in JavaScript files
+      },
+    },
     rules: {
-      "no-unused-vars": "error",
-      "no-undef": "error",
+      "no-unused-vars": "error", // Check for unused vars in JS files
+      "no-undef": "error", // Ensure variables are defined in JS files
     },
   },
 
