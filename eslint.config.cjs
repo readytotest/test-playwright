@@ -8,12 +8,15 @@
 const typescriptPlugin = require("@typescript-eslint/eslint-plugin");
 const typescriptParser = require("@typescript-eslint/parser");
 const prettierPlugin = require("eslint-plugin-prettier");
+const htmlEslintPlugin = require("@html-eslint/eslint-plugin");
+const htmlEslintParser = require("@html-eslint/parser");
 
 module.exports = [
   {
     plugins: {
       "@typescript-eslint": typescriptPlugin,
       prettier: prettierPlugin,
+      "@html-eslint": htmlEslintPlugin,
     },
     rules: {
       "prettier/prettier": "error", // Apply Prettier formatting rule globally
@@ -45,6 +48,15 @@ module.exports = [
     rules: {
       "no-unused-vars": "error", // Check for unused vars in JS files
       "no-undef": "error", // Ensure variables are defined in JS files
+    },
+  },
+  {
+    files: ["**/*.html", "**/*.htm"],
+    languageOptions: {
+      parser: htmlEslintParser,
+    },
+    rules: {
+      "@html-eslint/no-duplicate-id": "error",
     },
   },
 

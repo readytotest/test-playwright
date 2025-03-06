@@ -14,7 +14,7 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,cjs}": [
+    "*.{js,jsx,ts,tsx,cjs,htm,html}": [
       "eslint --fix"
     ],
     "_comment": "I changed it so Prettier is now being handled by ESLint with eslint-plugin-prettier. Thats's why I removed (prettier --write) from lint-staged"
@@ -24,6 +24,8 @@
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^9.5.1",
+    "@html-eslint/eslint-plugin": "^0.35.1",
+    "@html-eslint/parser": "^0.35.1",
     "@playwright/test": "^1.50.1",
     "@types/node": "^22.13.8",
     "@typescript-eslint/eslint-plugin": "^8.26.0",
