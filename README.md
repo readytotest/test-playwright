@@ -10,6 +10,9 @@
 
 ## Note
 
+**This repo has a pre-commit hook that lints staged files using Husky, Lint Staged,
+ESLint, Prettier, and HTML linting. If a commit fails, check the logs to see why.**
+
 After cloning the repo, make sure you have [Node.js](https://nodejs.org/) installed, then run `npm install` to set up dependencies.
 
 ## Workflow
