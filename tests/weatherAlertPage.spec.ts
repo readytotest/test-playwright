@@ -68,7 +68,7 @@ for (let i = 0; i <= 0; i++) {
       // Here's where if you're watching the test run in headed mode, you'll see the second browser session appear.
       await secondaryPage.goto(copiedFromClipboard);
 
-      // In the (2nd) browser, it expects page to display weather alerts for Alaska
+      // In the (2nd) browser, it expects page to display weather alerts for Nevada
       await pageObjectweather.verifyWeatherTitle(testData.weatherAlertData.alertTitle, { ignoreCase: true });
     });
 
