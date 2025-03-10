@@ -18,7 +18,7 @@ import { expect, Page } from "@playwright/test";
 export const weatherAlertPageObject = (page: Page) => {
   const verifyWeatherTitle = async (title: string, options: { ignoreCase: boolean }) => {
     // Delay to prevent flaky tests from failing due to API lag causing empty text
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(5000);
     await expect(page.locator("weather-title")).toHaveText(title, options);
   };
 
