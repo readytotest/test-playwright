@@ -17,11 +17,8 @@ import { expect, Page } from "@playwright/test";
 
 export const weatherAlertPageObject = (page: Page) => {
   const verifyWeatherTitle = async (title: string, options: { ignoreCase: boolean }) => {
-    /*  Delay to prevent flaky tests from failing due to API lag causing empty text
-        10 seconds is long, but their API is slow today even when accessing it directly
-        from my browser or CURL so need this
-    */
-    await page.waitForTimeout(10000); // remember to remove it later or reduce it
+    // One day I had to put a 10 second fixed wait here due to the Weather API lag (not just in Playwright but using CURL as well)
+    // The API was slow to respond and the assertion was failing because the title was not being displayed
     await expect(page.locator("weather-title")).toHaveText(title, options);
   };
 
