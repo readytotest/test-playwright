@@ -28,7 +28,7 @@ export const philosophyPageObject = (page: Page) => {
     // but at the end of the name they have numbers or some other changing text.
     const element = page.locator("[class^='sec']");
     await expect(element.nth(n)).toBeVisible();
-    await expect(element.nth(n)).toHaveText("Thoughts on Software Quality Assurance");
+    await expect(element.nth(n)).toHaveText("Quick Thoughts");
   };
 
   // Set default value for n to 0, but in the spec, I will pass 1.
