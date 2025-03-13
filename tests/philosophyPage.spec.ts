@@ -23,5 +23,5 @@ test("philosophy page test", async ({ page }) => {
   // Verify content on the philosophy page
   await pageObject.verifyThoughtsQa();
   await pageObject.verifyThoughtsManual(1);
-  await pageObject.verifyThoughtsAutomation("Misconceptions About QA");
+  await pageObject.verifyThoughtsAutomation("Thoughts on Automation Testing");
 });
