@@ -107,7 +107,7 @@ export const homePageObject = (page: Page) => {
   };
 
   const clickFeedbackWidget = async () => {
-    await page.getByLabel("Send Message").click();
+    await page.getByLabel("Let's Connect!").click();
   };
 
   const fillFeedbackWidgetNameField = async (widgetNameField: string) => {
