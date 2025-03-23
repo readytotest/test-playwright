@@ -10,6 +10,7 @@ const typescriptParser = require("@typescript-eslint/parser");
 const prettierPlugin = require("eslint-plugin-prettier");
 const htmlEslintPlugin = require("@html-eslint/eslint-plugin");
 const htmlEslintParser = require("@html-eslint/parser");
+const playwrightPlugin = require("eslint-plugin-playwright");
 
 module.exports = [
   {
@@ -17,6 +18,7 @@ module.exports = [
       "@typescript-eslint": typescriptPlugin,
       prettier: prettierPlugin,
       "@html-eslint": htmlEslintPlugin,
+      playwright: playwrightPlugin,
     },
     rules: {
       "prettier/prettier": "error", // Apply Prettier formatting rule globally
@@ -35,6 +37,17 @@ module.exports = [
     },
     rules: {
       "@typescript-eslint/no-unused-vars": "error", // Check for unused vars in TypeScript files
+    },
+  },
+
+  {
+    files: ["tests/**"], // Target Playwright test files
+    plugins: {
+      playwright: playwrightPlugin, // Use Playwright plugin
+    },
+    rules: {
+      ...playwrightPlugin.configs["flat/recommended"].rules, // Apply Playwright's recommended rules
+      // Customize Playwright rules here
     },
   },
 
