@@ -17,8 +17,10 @@ export default defineConfig({
     "**/weatherAlerts-old.spec.ts", // Exclude another specific file in any subdirectory
   ],
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
+  // Set workers to 1 to ensure only one spec file is run at a time
+  workers: 1, // Only 1 spec file will run at a time
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
