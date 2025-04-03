@@ -14,7 +14,7 @@
     "prepare": "husky",
     "allure": "allure generate ./allure-results -o ./allure-report --clean && allure open allure-report",
     "_comment": "The output on the next line creates the report up one directory from where the test-playwright repo was copied to in the CI env....to the main repo in the ci env",
-    "allure-ci": "allure generate ./allure-results -o ../playwright-allure-report/allure-report --clean"
+    "allure-ci": "allure generate ./allure-results -o ../allure-report --clean"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,cjs,htm,html}": [
