@@ -31,7 +31,7 @@ Download the JDK (choose correct version depending if you have an Intel chip or 
 <br>
 https://adoptium.net/temurin/releases/?os=mac&arch=any
 <br>
-Run this in the terminal `sudo npm install -g allure-commandline`.
+Run this in the terminal `npm install --save-dev allure-commandline`.
 <br>
 After the tests finish, run `allure generate ./allure-results -o ./allure-report` to create the report.
 <br>
