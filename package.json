@@ -12,7 +12,8 @@
     "prettier:fix": "prettier . --write",
     "precommit": "lint-staged",
     "prepare": "husky",
-    "allure": "allure generate ./allure-results -o ./allure-report --clean && allure open allure-report"
+    "allure": "allure generate ./allure-results -o ./allure-report --clean && allure open allure-report",
+    "allure-ci": "allure generate ./allure-results -o ./allure-report --clean"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,cjs,htm,html}": [
