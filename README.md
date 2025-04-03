@@ -33,7 +33,7 @@ https://adoptium.net/temurin/releases/?os=mac&arch=any
 <br>
 **Allure Reporting Setup**
 <br>
-Install Allure Locally
+It should be installed when you run npm ci earlier, but in case it's not..
 <br>
 Run this in the terminal:
 <br>
