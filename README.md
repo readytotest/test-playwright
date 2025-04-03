@@ -36,6 +36,13 @@ Run this in the terminal `sudo npm install -g allure-commandline`.
 After the tests finish, run `allure generate ./allure-results -o ./allure-report` to create the report.
 <br>
 Run this `allure open ./allure-report` to view the report.
+<br>
+
+When generating Allure reports, you may need to use the --clean flag if there is existing data in the report directory.
+<br>
+This ensures that old data is cleared before generating a new report. You can run the following command:
+<br>
+`allure generate ./allure-results -o ./allure-report --clean`
 
 ## Workflow
 
