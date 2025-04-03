@@ -16,6 +16,26 @@
 After cloning the repo, make sure you have [Node.js](https://nodejs.org/) installed, then run `npm install` to set up dependencies.
 <br>
 **This will attempt to overwrite the Husky pre-commit and .gitignore files! Be sure to undo those changes!**
+<br>
+<br>
+You're also going to need to run `npx playwright install`.
+<br>
+<br>
+If you want to use the Allure Playwright Reporter, then you're going to need to do some extra stuff as well.
+<br>
+Playwright comes with a built-in HTML reporter, so Allure is completely optional.
+<br>
+I'm using macOS (so that's what these instructions will be for).
+<br>
+Download the JDK (choose correct version depending if you have an Intel chip or Apple chip).
+<br>
+https://adoptium.net/temurin/releases/?os=mac&arch=any
+<br>
+Run this in the terminal `sudo npm install -g allure-commandline`.
+<br>
+After the tests finish, run `allure generate ./allure-results -o ./allure-report` to create the report.
+<br>
+Run this `allure open ./allure-report` to view the report.
 
 ## Workflow
 
