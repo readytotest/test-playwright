@@ -27,7 +27,7 @@
     "@html-eslint/eslint-plugin": "^0.37.0",
     "@html-eslint/parser": "^0.37.0",
     "@playwright/test": "^1.51.1",
-    "@types/node": "^22.13.17",
+    "@types/node": "^22.14.0",
     "@typescript-eslint/eslint-plugin": "^8.29.0",
     "@typescript-eslint/parser": "^8.29.0",
     "eslint": "^9.23.0",
