@@ -14,6 +14,8 @@
 <br> linting. If a commit fails, check the logs to see why.**
 
 After cloning the repo, make sure you have [Node.js](https://nodejs.org/) installed, then run `npm install` to set up dependencies.
+<br>
+**This will attempt to overwrite the Husky pre-commit and .gitignore files! Be sure to undo those changes!**
 
 ## Workflow
 
