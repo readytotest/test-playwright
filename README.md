@@ -31,18 +31,25 @@ Download the JDK (choose correct version depending if you have an Intel chip or 
 <br>
 https://adoptium.net/temurin/releases/?os=mac&arch=any
 <br>
-Run this in the terminal `npm install --save-dev allure-commandline`.
+**Allure Reporting Setup**
 <br>
-After the tests finish, run `allure generate ./allure-results -o ./allure-report` to create the report.
+Install Allure Locally
 <br>
-Run this `allure open ./allure-report` to view the report.
+Run this in the terminal:
 <br>
-
-When generating Allure reports, you may need to use the --clean flag if there is existing data in the report directory.
+npm install --save-dev allure-commandline
 <br>
-This ensures that old data is cleared before generating a new report. You can run the following command:
+**Generate and Open the Report**
 <br>
-`allure generate ./allure-results -o ./allure-report --clean`
+After the tests finish, run the following command to generate and automatically open the Allure report:
+<br>
+`npm run allure`
+<br>
+This is an npm script I created to make things easier.
+<br>
+It generates AND opens the report AND automatically includes the --clean flag to clear any
+<br>
+old data before generating a fresh report.
 
 ## Workflow
 
