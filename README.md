@@ -21,7 +21,9 @@ After cloning the repo, make sure you have [Node.js](https://nodejs.org/) instal
 You're also going to need to run `npx playwright install`.
 <br>
 <br>
-If you want to use the Allure Playwright Reporter, then you're going to need to do some extra stuff as well.
+**Allure Reporting Setup**
+<br>
+If you want to use the Allure Playwright Reporter locally, then you're going to need to do some extra stuff as well.
 <br>
 Playwright comes with a built-in HTML reporter, so Allure is completely optional.
 <br>
@@ -31,25 +33,17 @@ Download the JDK (choose correct version depending if you have an Intel chip or 
 <br>
 https://adoptium.net/temurin/releases/?os=mac&arch=any
 <br>
-**Allure Reporting Setup**
-<br>
-It should be installed when you run npm ci earlier, but in case it's not..
+Allure should have installed when you ran npm ci earlier, but in case it's not..
 <br>
 Run this in the terminal:
 <br>
 npm install --save-dev allure-commandline
 <br>
-**Generate and Open the Report**
+**Run Tests + Generate Reports + Open the Report**
 <br>
-After the tests finish, run the following command to generate and automatically open the Allure report:
+Run this from the terminal `npm run start-tests-keep-allure-history`.
 <br>
-`npm run allure`
-<br>
-This is an npm script I created to make things easier.
-<br>
-It generates AND opens the report AND automatically includes the --clean flag to clear any
-<br>
-old data before generating a fresh report.
+Once the tests are finished it will open the Allure report.
 
 ## Workflow
 
