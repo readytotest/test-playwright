@@ -13,9 +13,7 @@
     "precommit": "lint-staged",
     "prepare": "husky",
     "allure": "allure generate ./allure-results -o ./allure-report --clean && allure open allure-report",
-    "start-tests-keep-allure-history": "rm -rf ./allure-results && npx playwright test && cp -r ./allure-report/history ./allure-results/history && allure generate ./allure-results -o ./allure-report --clean && allure open ./allure-report",
-    "_comment": "The output on the next line creates the report up one directory from where the test-playwright repo was copied to in the CI env....to the main repo in the ci env",
-    "allure-ci": "allure generate ./allure-results -o ../allure-report --clean"
+    "start-tests-keep-allure-history": "rm -rf ./allure-results && npx playwright test && cp -r ./allure-report/history ./allure-results/history && allure generate ./allure-results -o ./allure-report --clean && allure open ./allure-report"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,cjs,htm,html}": [
