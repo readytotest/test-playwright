@@ -33,7 +33,7 @@ Download the JDK (choose correct version depending if you have an Intel chip or 
 <br>
 https://adoptium.net/temurin/releases/?os=mac&arch=any
 <br>
-Allure should have installed when you ran npm ci earlier, but in case it's not..
+Allure should have installed when you ran `npm i` earlier, but in case it's not..
 <br>
 Run this in the terminal:
 <br>
