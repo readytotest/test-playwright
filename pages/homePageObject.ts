@@ -110,7 +110,7 @@ export const homePageObject = (page: Page) => {
   };
 
   const clickFeedbackWidgetSendNowButton = async () => {
-    await page.getByLabel("Send Now!").click();
+    await page.click('button:has-text("Send Now!")');
   };
 
   const verifyFeedbackWidgetMessageSent = async (widgetMessageSent: string, options: { ignoreCase: boolean }) => {
