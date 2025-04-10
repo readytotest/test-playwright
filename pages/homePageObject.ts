@@ -115,7 +115,9 @@ export const homePageObject = (page: Page) => {
 
   const verifyFeedbackWidgetMessageSent = async (widgetMessageSent: string, options: { ignoreCase: boolean }) => {
     await page.waitForTimeout(1000);
-    await expect(page.locator(".success-message")).toContainText(widgetMessageSent, options);
+    const successMessageWidget = page.locator(".success_content", { hasText: widgetMessageSent });
+    await expect(successMessageWidget).toBeVisible();
+    await expect(successMessageWidget).toContainText(widgetMessageSent, options);
   };
 
   return {
