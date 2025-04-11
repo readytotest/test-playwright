@@ -114,6 +114,8 @@ export const homePageObject = (page: Page) => {
   };
 
   const verifyFeedbackWidgetMessageSent = async (widgetMessageSent: string, options: { ignoreCase: boolean }) => {
+    // Not going for a more specific element inside the Shadow DOM because Playwright just can't find it.
+    // Even though it's inside there, it's easier to target the #sentry-feedback parent element, which works fine.
     await expect(page.locator("#sentry-feedback")).toContainText(widgetMessageSent, options);
   };
 
