@@ -114,10 +114,7 @@ export const homePageObject = (page: Page) => {
   };
 
   const verifyFeedbackWidgetMessageSent = async (widgetMessageSent: string, options: { ignoreCase: boolean }) => {
-    await page.waitForTimeout(1000);
-    const successMessageWidget = page.locator(".success_position .success_content");
-    await expect(successMessageWidget).toBeVisible();
-    await expect(successMessageWidget).toContainText(widgetMessageSent, options);
+    await expect(page.locator("#sentry-feedback")).toContainText(widgetMessageSent, options);
   };
 
   return {

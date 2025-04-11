@@ -93,10 +93,10 @@ for (let i = 0; i <= 0; i++) {
       );
       // Click Send Now button
       await pageObjectHome.clickFeedbackWidgetSendNowButton();
-      // Verify message sent successfully
-      // comment this out temporarily--- since sentry made some changes i need to look into - await pageObjectHome.verifyFeedbackWidgetMessageSent(testData.feedbackWidgetData.confirmMessageSent, {
-      //   ignoreCase: true,
-      // });
+      //Verify message sent successfully
+      await pageObjectHome.verifyFeedbackWidgetMessageSent(testData.feedbackWidgetData.confirmMessageSent, {
+        ignoreCase: true,
+      });
     });
 
     test.afterEach(() => {
