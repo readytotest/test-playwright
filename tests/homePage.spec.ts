@@ -1,15 +1,3 @@
-/*
-   ┌───────────────────────────────────────────────────────┐
-   │ I use Playwright daily at my job...
-   | but I also tinker with Playwright in my spare time!   │
-   | because I like it!    
-   │                                                       │
-   │ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ 
-   │                                                       │
-   │ ¯\_(ツ)_/¯ Oh well, let's automate some tests!™        
-   └───────────────────────────────────────────────────────┘
-*/
-
 import { test } from "@playwright/test";
 import { homePageObject } from "@pages/homePageObject";
 import { faker } from "@faker-js/faker/locale/en_US";
