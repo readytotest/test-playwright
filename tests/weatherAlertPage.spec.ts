@@ -1,15 +1,3 @@
-/*
-   ┌───────────────────────────────────────────────────────┐
-   │ I use Playwright daily at my job...
-   | but I also tinker with Playwright in my spare time!   │
-   | because I like it!    
-   │                                                       │
-   │ ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ 
-   │                                                       │
-   │ ¯\_(ツ)_/¯ Oh well, let's automate some tests!™        
-   └───────────────────────────────────────────────────────┘
-*/
-
 import { test } from "@playwright/test";
 import { goToIndexHtm } from "@scripts/navigation";
 import { weatherAlertPageObject } from "@pages/weatherAlertPageObject";
