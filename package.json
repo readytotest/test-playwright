@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "_comment": "to use these scripts in the terminal use npm run <script-name>",
     "clearreportfolder": "rm -r test-results && mkdir test-results",
     "ui": "npx playwright test --ui",
     "lint": "eslint .",
@@ -12,6 +13,9 @@
     "prettier:fix": "prettier . --write",
     "precommit": "lint-staged",
     "prepare": "husky",
+    "_comment2": "after you run the playwright tests, run this command to generate/open the allure report, but it won't have the history of previous tests",
+    "generate-allure-report": "npx allure generate ./allure-results --clean && npx allure open ./allure-report",
+    "_comment3": "preserving history in allure is a bit tricky, so I created a script to do that",
     "start-tests-keep-allure-history": "rm -rf ./allure-results && npx playwright test && cp -r ./allure-report/history ./allure-results/history && allure generate ./allure-results -o ./allure-report --clean && allure open ./allure-report"
   },
   "lint-staged": {
