@@ -1,10 +1,17 @@
 # 🧪 Playwright Test Automation
 
-This repo holds all the Playwright tests for my GitHub Pages site. It’s wired up to CI, runs with GitHub Actions, has pre-commit checks, and Allure reports.
+Welcome to the Playwright repo! I use this for exploring **software QA**, **test automation**, and **CI/CD** with Playwright.
 
-[![GitHub Actions GitGuardian](https://github.com/readytotest/test-playwright/actions/workflows/gitguardian.yml/badge.svg)](https://github.com/readytotest/test-playwright/actions/workflows/gitguardian.yml)  
-[![GitHub Actions Playwright](https://github.com/readytotest/readytotest.github.io/actions/workflows/playwright-mysite.yml/badge.svg)](https://github.com/readytotest/readytotest.github.io/actions/workflows/playwright-mysite.yml)  
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/t/readytotest/test-playwright?style=social&color=%23FF69B4)](https://github.com/readytotest/test-playwright/commits/main/) [![GitHub last commit](https://img.shields.io/github/last-commit/readytotest/test-playwright?style=social)](https://github.com/readytotest/test-playwright/commits/main/)
+## 🔍 What this repo's about
+
+This repo contains all the **Playwright tests** for my GitHub Pages site. It's integrated into a CI pipeline with **GitHub Actions**, includes pre-commit checks, and generates detailed **Allure reports**.
+
+Key features:
+
+- **CI/CD:** Runs tests automatically through GitHub Actions.
+- **Test Automation:** Playwright is setup with helpers and page objects.
+- **Pre-commit hooks:** Runs linting (ESLint, Prettier) before commits are made.
+- **Allure Reports:** Fancy test reports with history tracking.
 
 ## 🚀 Quick Start
 
@@ -75,3 +82,12 @@ If you’ve already run the tests and want to generate the Allure report without
 ```
 npm run generate-allure-report
 ```
+
+## 🚦 Badges
+
+**CI/CD**  
+[![Playwright GitHub Action](https://github.com/readytotest/readytotest.github.io/actions/workflows/playwright-mysite.yml/badge.svg)](https://github.com/readytotest/readytotest.github.io/actions/workflows/playwright-mysite.yml)  
+[![GitHub Actions GitGuardian](https://github.com/readytotest/test-playwright/actions/workflows/gitguardian.yml/badge.svg)](https://github.com/readytotest/test-playwright/actions/workflows/gitguardian.yml)
+
+**Commit Activity**  
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/t/readytotest/test-playwright?style=social&color=%23FF69B4)](https://github.com/readytotest/test-playwright/commits/main/) [![GitHub last commit](https://img.shields.io/github/last-commit/readytotest/test-playwright?style=social)](https://github.com/readytotest/test-playwright/commits/main/)
