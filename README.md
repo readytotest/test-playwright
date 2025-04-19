@@ -17,17 +17,6 @@ npx playwright install
 
 ⚠️ Heads up: `npm install` might overwrite the .gitignore and pre-commit inside the .husky/\_ dir. Undo that if it happens.
 
-## 🧼 Pre-commit Hooks
-
-Pre-commit is set up with Husky + lint-staged. Here's what runs on staged files:
-
-- `eslint` and the Playwright plugin for that
-- `prettier` for formatting
-
-If your commit fails, check the logs.
-
----
-
 ## 🧪 Running Tests Locally
 
 By default, the tests expect a dev server running at `http://localhost:3000`. Since the site lives in a separate repo, if you try to run tests without the server, they'll fail.
@@ -36,7 +25,7 @@ Two options:
 
 ### Easiest: Run Against Prod
 
-In `scripts/navigation.ts`, just flip the `localHost` setting to `production`. This will point the tests at the live site.
+In `scripts/navigation.ts`, just flip the `localHost` variable to `production`. This will point the tests at the live site.
 
 ### Local Dev Setup
 
@@ -45,7 +34,19 @@ If you want to run the tests locally with the dev server:
 1. Clone [my main site repo](https://github.com/readytotest/readytotest.github.io).
 2. Open **both repos** in your editor.
 3. In the site repo, run the server with:
-   `node server.js`
+   `node server.js`  
+    Or with the bash script (not necessary, just for fun):  
+   `chmod +x start-server.sh`  
+   `./start-server.sh`
+
+## 🧼 Pre-commit Hooks
+
+Pre-commit is set up with Husky + lint-staged. Here's what runs on staged files:
+
+- `eslint` and the Playwright plugin for that
+- `prettier` for formatting (Set this up as an eslint plugin also)
+
+If your commit fails, check the logs.
 
 ## 📈 Allure Reports (Optional)
 
