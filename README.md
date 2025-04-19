@@ -4,7 +4,7 @@ Welcome to the Playwright repo! I use this for exploring **software QA**, **test
 
 ## 🔍 What this repo's about
 
-This repo contains all the **Playwright tests** for my GitHub Pages site. It's integrated into a CI pipeline with **GitHub Actions**, includes pre-commit checks, and generates detailed **Allure reports**.
+This repo contains all the **Playwright tests** for my GitHub Pages site. It's integrated into a CI pipeline over in my main repo with **GitHub Actions**, includes pre-commit checks, and generates detailed **Allure reports**.
 
 Key features:
 
@@ -33,6 +33,8 @@ Two options:
 ### Easiest: Run Against Prod
 
 In `scripts/navigation.ts`, just flip the `localHost` variable to `production`. This will point the tests at the live site.
+
+**Note:** One of the scripts (`testingSkillsPage.spec.ts`) has a hardcoded URL. You'll need to update that also.
 
 ### Local Dev Setup
 
