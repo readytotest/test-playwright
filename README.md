@@ -4,7 +4,8 @@ Welcome to the Playwright repo! I use this for exploring **software QA**, **test
 
 ## 🔍 What this repo's about
 
-This repo contains all the **Playwright tests** for my GitHub Pages site. It's integrated into a CI pipeline over in my main repo with **GitHub Actions**, includes pre-commit checks, and generates detailed **Allure reports**.
+This repo contains all the **Playwright tests** for my GitHub Pages site. It's integrated into a [CI pipeline](https://github.com/readytotest/readytotest.github.io/blob/main/.github/workflows/playwright-mysite.yml)
+over in my main repo with **GitHub Actions**, includes pre-commit checks, and generates detailed **Allure reports**.
 
 Key features:
 
@@ -84,6 +85,12 @@ If you’ve already run the tests and want to generate the Allure report without
 ```
 npm run generate-allure-report
 ```
+
+## 🛠️ Workspace Files
+
+If you are using VS Code, I recommend you open the repo with **VS Code's workspace files**. The file is located in the root of the repo and has the `.code.workspace` extension. It contains configurations for the **Prettier** extension and **recommended extensions**.
+
+If you want, you can add the paths to both this repo and the main repo in your workspace, which allows you to work on them simultaneously. However, I personally prefer working with one repo at a time to keep things organized, unless I'm wanting to test Playwright against my site locally.
 
 ## 🚦 Badges
 
