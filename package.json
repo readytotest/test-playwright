@@ -32,7 +32,7 @@
     "@html-eslint/eslint-plugin": "^0.39.0",
     "@html-eslint/parser": "^0.39.0",
     "@playwright/test": "^1.52.0",
-    "@types/node": "^22.15.2",
+    "@types/node": "^22.15.3",
     "@typescript-eslint/eslint-plugin": "^8.31.0",
     "@typescript-eslint/parser": "^8.31.0",
     "allure-commandline": "^2.34.0",
