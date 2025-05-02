@@ -41,7 +41,7 @@ module.exports = [
   },
 
   {
-    files: ["tests/**"], // Target Playwright test files
+    files: ["tests/**", "pages/**"], // Target Playwright test files
     plugins: {
       playwright: playwrightPlugin, // Use Playwright plugin
     },
