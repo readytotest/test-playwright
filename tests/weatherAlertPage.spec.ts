@@ -56,7 +56,10 @@ for (let i = 0; i <= 0; i++) {
       // Here's where if you're watching the test run in headed mode, you'll see the second browser session appear.
       await secondaryPage.goto(copiedFromClipboard);
 
-      // In the (2nd) browser, it expects page to display weather alerts for Nevada
+      // In the (2nd) browser, it's expected to display weather alerts for Nevada.
+      // The API can occasionally lag, so I added a 10-second fixed wait. ESLint's Playwright plugin
+      // will flag this in the `verifyWeatherTitle` function.
+      // Also, every once in a while, this assertion fails due to a CORS error...
       await pageObjectweather.verifyWeatherTitle(testData.weatherAlertData.alertTitle, { ignoreCase: true });
     });
 
