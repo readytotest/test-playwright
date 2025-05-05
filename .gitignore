@@ -5,3 +5,4 @@ node_modules/
 /allure-results/
 /downloads
 .DS_Store
+harper-db.env
