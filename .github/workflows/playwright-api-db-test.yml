@@ -6,7 +6,7 @@
 
 # These are the flags you need to get the install going https://docs.harperdb.io/docs/deployments/harper-cli
 
-name: Playwright GitHub Page (manual, pr/push)
+name: Playwright API Test (manual)
 env:
   PLAYWRIGHT_ACTIONS_CONFIG: ${{ vars.PLAYWRIGHT_ACTIONS_DB_CONFIG }}
 on:
