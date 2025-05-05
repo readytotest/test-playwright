@@ -8,7 +8,7 @@
 
 name: Playwright API Test (manual)
 env:
-  PLAYWRIGHT_ACTIONS_CONFIG: ${{ vars.PLAYWRIGHT_ACTIONS_DB_CONFIG }}
+  PLAYWRIGHT_ACTIONS_DB_CONFIG: ${{ vars.PLAYWRIGHT_ACTIONS_DB_CONFIG }}
 on:
   workflow_dispatch:
 
