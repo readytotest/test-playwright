@@ -1,0 +1,57 @@
+# I'm keeping this config simple and omitting things like the Allure report
+# that I have running for Playwright tests against my website over in my main
+# repo. This is only to demo how API testing can work with Playwright
+# And this doesn't run on push or pr...you'd need to click the button up in the
+# GitHub Actions UI to start this (or run it the test in your local environment
+
+# These are the flags you need to get the install going https://docs.harperdb.io/docs/deployments/harper-cli
+
+name: Playwright GitHub Page (manual, pr/push)
+env:
+  PLAYWRIGHT_ACTIONS_CONFIG: ${{ vars.PLAYWRIGHT_ACTIONS_DB_CONFIG }}
+on:
+  workflow_dispatch:
+
+jobs:
+  Playwright-GitHub-Page-Test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10 #I'd set a timeout in case something hangs, which I've seen happen. This could waste your GitHub Actions minutes.
+    steps:
+      # Check out primary repo where I will start the database
+      - name: Checkout Playwright Repo
+        uses: actions/checkout@v4.2.2
+
+      - name: Setup Node.js environment with most recent version
+        uses: actions/setup-node@v4.4.0
+        with:
+          node-version: "latest"
+        #actions/setup-node installs Node.js globally for the entire GitHub Actions runner,
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install HarperDB (with setup flags)
+        run: |
+          npx harperdb install --TC_AGREEMENT ${{ vars.TC_AGREEMENT }} \
+            --HDB_ADMIN_USERNAME ${{ vars.HDB_ADMIN_USERNAME }} \
+            --HDB_ADMIN_PASSWORD ${{ secrets.HDB_ADMIN_PASSWORD }} \
+            --ROOTPATH ${{ vars.ROOTPATH }} \
+            --OPERATIONSAPI_NETWORK_PORT ${{ vars.OPERATIONSAPI_NETWORK_PORT }}
+
+      - name: Start HarperDB
+        run: npx harperdb start
+
+      #- name: Install Playwright Browsers
+      #run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: npx playwright test --config $PLAYWRIGHT_ACTIONS_DB_CONFIG
+
+      - name: Upload Built-In HTML Report (Not Allure) to GitHub Actions Workflow Run Summary Page
+        uses: actions/upload-artifact@v4.6.2
+        if: always()
+        with:
+          name: Built-in Playwright HTML Report Test Results + Video
+          path: ./test-playwright/playwright-report/
+          if-no-files-found: warn
+          retention-days: 7
