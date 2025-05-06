@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10 #I'd set a timeout in case something hangs, which I've seen happen. This could waste your GitHub Actions minutes.
     steps:
-      # Check out primary repo where I will start the database
+      # Check out the repo where I will start the database and run the tests
       - name: Checkout Playwright Repo
         uses: actions/checkout@v4.2.2
 
