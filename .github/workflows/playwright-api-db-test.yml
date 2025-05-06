@@ -44,6 +44,9 @@ jobs:
       - name: Start HarperDB
         run: npx harperdb start
 
+      - name: Wait for HarperDB
+        run: sleep 5
+
       #- name: Install Playwright Browsers
       #run: npx playwright install --with-deps
 
