@@ -17,7 +17,7 @@ export default defineConfig({
 
   fullyParallel: true,
   retries: 1,
-  reporter: [["html"], ["allure-playwright"]],
+  reporter: "html",
   use: {
     headless: true,
     screenshot: "on",
