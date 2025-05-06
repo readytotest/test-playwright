@@ -44,6 +44,9 @@ jobs:
       - name: Start HarperDB
         run: npx harperdb start
 
+      # I'm sure there's some bash to check if the port is listening instead of a hard wait,
+      # but I don't want to go down that rabbit hole now as I just want to get this working
+      # Yeah you need this, otherwise the Playwright test tries to start before the DB is started!
       - name: Wait for HarperDB
         run: sleep 5
 
