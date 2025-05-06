@@ -12,6 +12,9 @@ env:
   HARPERDB_URL: ${{ vars.HARPERDB_URL }}
   HARPERDB_USERNAME: ${{ vars.HDB_ADMIN_USERNAME  }}
   HARPERDB_PASSWORD: ${{ secrets.HDB_ADMIN_PASSWORD }}
+  TERMS_AGREE: ${{ vars.TC_AGREEMENT }}
+  ROOT_PATH: ${{ vars.ROOTPATH }}
+  PORT: ${{ vars.OPERATIONSAPI_NETWORK_PORT }}
 on:
   workflow_dispatch:
 
@@ -35,11 +38,11 @@ jobs:
 
       - name: Install HarperDB (with setup flags)
         run: |
-          npx harperdb install --TC_AGREEMENT ${{ vars.TC_AGREEMENT }} \
+          npx harperdb install --TC_AGREEMENT $TERMS_AGREE \
             --HDB_ADMIN_USERNAME $HARPERDB_USERNAME \
             --HDB_ADMIN_PASSWORD $HARPERDB_PASSWORD \
-            --ROOTPATH ${{ vars.ROOTPATH }} \
-            --OPERATIONSAPI_NETWORK_PORT ${{ vars.OPERATIONSAPI_NETWORK_PORT }}
+            --ROOTPATH $ROOT_PATH \
+            --OPERATIONSAPI_NETWORK_PORT $PORT
 
       - name: Start HarperDB
         run: npx harperdb start
