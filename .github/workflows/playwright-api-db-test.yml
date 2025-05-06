@@ -61,6 +61,6 @@ jobs:
         if: always()
         with:
           name: Built-in Playwright HTML Report Test Results + Video
-          path: ./test-playwright/playwright-report/
+          path: ./playwright-report/
           if-no-files-found: warn
           retention-days: 7
