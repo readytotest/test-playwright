@@ -9,6 +9,9 @@
 name: Playwright API Test (manual)
 env:
   PLAYWRIGHT_ACTIONS_DB_CONFIG: ${{ vars.PLAYWRIGHT_ACTIONS_DB_CONFIG }}
+  HARPERDB_URL: ${{ vars.HARPERDB_URL }}
+  HARPERDB_USERNAME: ${{ vars.HDB_ADMIN_USERNAME  }}
+  HARPERDB_PASSWORD: ${{ secrets.HDB_ADMIN_PASSWORD }}
 on:
   workflow_dispatch:
 
@@ -33,8 +36,8 @@ jobs:
       - name: Install HarperDB (with setup flags)
         run: |
           npx harperdb install --TC_AGREEMENT ${{ vars.TC_AGREEMENT }} \
-            --HDB_ADMIN_USERNAME ${{ vars.HDB_ADMIN_USERNAME }} \
-            --HDB_ADMIN_PASSWORD ${{ secrets.HDB_ADMIN_PASSWORD }} \
+            --HDB_ADMIN_USERNAME $HARPERDB_USERNAME \
+            --HDB_ADMIN_PASSWORD $HARPERDB_PASSWORD \
             --ROOTPATH ${{ vars.ROOTPATH }} \
             --OPERATIONSAPI_NETWORK_PORT ${{ vars.OPERATIONSAPI_NETWORK_PORT }}
 
