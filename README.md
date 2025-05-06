@@ -49,6 +49,10 @@ If you want to run the tests locally with the dev server:
    `chmod +x start-server.sh` (Only need to do this if permissions aren't set 1st time)  
    `./start-server.sh`
 
+## API Testing
+
+If you want to try and run the DB spec (which runs Playwright API testing) then you should first startup the DB with `npx harperdb` and then just run that spec only with the actions-db.config configuration. If you're using the Playwright VS Code extension, you will not see the DB spec in the test explorer unless you switch over to the actions-db-config, because it's excluded from all configs except that one. I have a separate config just for that spec since it's not running in my prod CI pipeline. This DB tinkering is separate from my website, as I have a static site that doesn't use a DB.
+
 ## 🧼 Pre-commit Hooks
 
 Pre-commit is set up with Husky + lint-staged. Here's what runs on staged files:
