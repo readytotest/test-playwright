@@ -60,7 +60,7 @@ jobs:
         uses: actions/upload-artifact@v4.6.2
         if: always()
         with:
-          name: Built-in Playwright HTML Report Test Results + Video
+          name: Built-in Playwright HTML Report Test Results
           path: ./playwright-report/
           if-no-files-found: warn
           retention-days: 7
