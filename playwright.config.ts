@@ -13,8 +13,9 @@ import { defineConfig, devices } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests",
   testIgnore: [
-    "**/indexHtm-old.spec.ts", // Exclude this specific file in any subdirectory
-    "**/weatherAlerts-old.spec.ts", // Exclude another specific file in any subdirectory
+    "**/harperDB.spec.ts", // Exclude this specific file in any subdirectory
+    // If you want to test the DB spec, switch over to the actions-db.config.ts
+    // and don't forget to start the DB with npx harperdb
   ],
   /* Run tests in files in parallel */
   fullyParallel: false,
