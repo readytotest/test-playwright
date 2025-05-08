@@ -29,8 +29,8 @@ export const homePageObject = (page: Page) => {
       console.log("✅ Success: Dog GIF is visible!");
 
       // Verify the ID attribute
-      const id = await dogGif.getAttribute("id");
-      expect(id).toBe("dog-run");
+      const id = dogGif;
+      await expect(id).toHaveAttribute("id", "dog-run");
       console.log("✅ Success: Dog GIF has the correct ID ('dog-run').");
     } catch (error) {
       // Log the error message
@@ -42,7 +42,7 @@ export const homePageObject = (page: Page) => {
   };
 
   // Programmatically force the browser to download a file without relying on user interaction,
-  // otherwise some files open witin the browser itself and I want to download it.
+  // otherwise some files open within the browser itself and I want to download it.
   const initiateDownload = async (hrefAttribute: string, fileName: string) => {
     await page.evaluate(
       ({ hrefAttribute, fileName }) => {
