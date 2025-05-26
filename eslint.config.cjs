@@ -15,10 +15,7 @@ const playwrightPlugin = require("eslint-plugin-playwright");
 module.exports = [
   {
     plugins: {
-      "@typescript-eslint": typescriptPlugin,
       prettier: prettierPlugin,
-      "@html-eslint": htmlEslintPlugin,
-      playwright: playwrightPlugin,
     },
     rules: {
       "prettier/prettier": "error", // Apply Prettier formatting rule globally
@@ -27,6 +24,9 @@ module.exports = [
 
   {
     files: ["**/*.ts", "**/*.tsx"],
+    plugins: {
+      "@typescript-eslint": typescriptPlugin,
+    },
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {
@@ -65,6 +65,9 @@ module.exports = [
   },
   {
     files: ["**/*.html", "**/*.htm"],
+    plugins: {
+      "@html-eslint": htmlEslintPlugin,
+    },
     languageOptions: {
       parser: htmlEslintParser,
     },
