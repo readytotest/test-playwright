@@ -8,8 +8,6 @@
 const typescriptPlugin = require("@typescript-eslint/eslint-plugin");
 const typescriptParser = require("@typescript-eslint/parser");
 const prettierPlugin = require("eslint-plugin-prettier");
-const htmlEslintPlugin = require("@html-eslint/eslint-plugin");
-const htmlEslintParser = require("@html-eslint/parser");
 const playwrightPlugin = require("eslint-plugin-playwright");
 
 module.exports = [
@@ -61,18 +59,6 @@ module.exports = [
     rules: {
       "no-unused-vars": "error", // Check for unused vars in JS files
       "no-undef": "error", // Ensure variables are defined in JS files
-    },
-  },
-  {
-    files: ["**/*.html", "**/*.htm"],
-    plugins: {
-      "@html-eslint": htmlEslintPlugin,
-    },
-    languageOptions: {
-      parser: htmlEslintParser,
-    },
-    rules: {
-      "@html-eslint/no-duplicate-id": "error",
     },
   },
 
