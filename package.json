@@ -37,7 +37,7 @@
     "allure-playwright": "^3.3.2",
     "dotenv": "^17.2.0",
     "eslint": "^9.31.0",
-    "eslint-config-prettier": "^10.1.5",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-playwright": "^2.2.0",
     "eslint-plugin-prettier": "^5.5.1",
     "harperdb": "^4.6.2",
