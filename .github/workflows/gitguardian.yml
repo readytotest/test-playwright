@@ -9,7 +9,7 @@ jobs:
     timeout-minutes: 10 #I'd set a timeout in case something hangs, which I've seen happen. This could waste your GitHub Actions minutes.
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0 # fetch all history so multiple commits can be scanned
       - name: GitGuardian scan
