@@ -1,6 +1,6 @@
 name: GitGuardian scan
 
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
   scanning:
