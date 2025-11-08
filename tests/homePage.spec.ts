@@ -6,6 +6,8 @@ import { testIdGenerator } from "@scripts/testIdGenerator";
 import { verifyTextAndLink } from "@scripts/verifyTextAndLink";
 import { goToIndexHtm } from "@scripts/navigation";
 import { getTimeZoneInfo } from "@scripts/getTimeZoneInfo";
+import { clickButtonByName } from "@scripts/clickButtonByName";
+import { ButtonName } from "@scripts/enums/button-name";
 const feedbackWidgetLoremIpsum = faker.lorem.paragraph({ min: 2, max: 7 });
 
 // ___________________________________________________________________
@@ -80,7 +82,7 @@ for (let i = 0; i <= 0; i++) {
      *************************************************************
      */
 
-    test(`feedback widget test run:${i}`, async () => {
+    test(`feedback widget test run:${i}`, async ({ page }) => {
       // Open the feedback widget
       await pageObjectHome.clickFeedbackWidget();
       // Fill in name field
@@ -92,7 +94,7 @@ for (let i = 0; i <= 0; i++) {
         `${testData.feedbackWidgetData.message} ${feedbackWidgetLoremIpsum} TestID:${testIdGenerator}`
       );
       // Click Send Now button
-      await pageObjectHome.clickFeedbackWidgetSendNowButton();
+      await clickButtonByName(page, ButtonName.SendNow);
       //Verify message sent successfully
       await pageObjectHome.verifyFeedbackWidgetMessageSent(testData.feedbackWidgetData.confirmMessageSent, {
         ignoreCase: true,

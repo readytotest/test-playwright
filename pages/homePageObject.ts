@@ -109,10 +109,6 @@ export const homePageObject = (page: Page) => {
     console.log(`✅ ${widgetMessageField}`);
   };
 
-  const clickFeedbackWidgetSendNowButton = async () => {
-    await page.click('button:has-text("Send Now!")');
-  };
-
   const verifyFeedbackWidgetMessageSent = async (widgetMessageSent: string, options: { ignoreCase: boolean }) => {
     // Not going for a more specific element inside the Shadow DOM because Playwright just can't find it.
     // Even though it's inside there, it's easier to target the #sentry-feedback parent element, which works fine.
@@ -129,7 +125,6 @@ export const homePageObject = (page: Page) => {
     fillFeedbackWidgetNameField,
     fillFeedbackWidgetEmailField,
     fillFeedbackWidgetMessageField,
-    clickFeedbackWidgetSendNowButton,
     verifyDogGif,
     verifyFeedbackWidgetMessageSent,
   };
