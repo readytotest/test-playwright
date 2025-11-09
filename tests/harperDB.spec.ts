@@ -16,6 +16,7 @@ https://docs.harperdb.io/docs/deployments/harper-cli
 What's going on here is that I've got a HarperDB instance running locally
 and I'm using Playwright to test API requests directly.
 
+UI for DB http://localhost:9925/
 */
 
 import { test, expect, request } from "@playwright/test";
