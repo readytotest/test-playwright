@@ -5,7 +5,7 @@ This enforces using an enum member, which helps with autocomplete and reduces ty
 
 import { Page } from "@playwright/test";
 // Import the enum
-import { ButtonName } from "./enums/button-name";
+import { ButtonName } from "@scripts/enums/button-name";
 
 // Accepts the enum type and a Page instance
 export const clickButtonByName = async (page: Page, buttonName: ButtonName) => {
