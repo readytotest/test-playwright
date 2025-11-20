@@ -4,7 +4,5 @@
 
 export enum ButtonName {
   SendNow = "Send Now!",
-  Save = "Save", // Sample only, not using these on my site
-  Cancel = "Cancel", // Sample only, not using these on my site
-  Delete = "Delete", // Sample only, not using these on my site
+  Cancel = "Cancel",
 }
