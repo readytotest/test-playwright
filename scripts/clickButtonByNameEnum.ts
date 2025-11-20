@@ -8,6 +8,6 @@ import { Page } from "@playwright/test";
 import { ButtonName } from "@scripts/enums/button-name";
 
 // Accepts the enum type and a Page instance
-export const clickButtonByName = async (page: Page, buttonName: ButtonName) => {
+export const clickButtonByNameEnum = async (page: Page, buttonName: ButtonName) => {
   await page.getByRole("button", { name: buttonName, exact: true }).click();
 };
