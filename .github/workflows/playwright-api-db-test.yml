@@ -25,7 +25,7 @@ jobs:
     steps:
       # Check out the repo where I will start the database and run the tests
       - name: Checkout Playwright Repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup Node.js environment with most recent version
         uses: actions/setup-node@v6.0.0
