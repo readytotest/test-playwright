@@ -12,14 +12,14 @@ For example, if you have multiple functions that use the same union type.
 Then you wouldn't need to repeat the union type each time, just the type alias.
 For this one, you'd need to import the type alias where you use it.
 
-// Define a reusable type alias
+// Type alias for allowed button names
 export type ButtonName = "Send Now!" | "Cancel";
 
-// Function using the type alias instead of inline union type
+// Function using the type alias. can optionally set a default value
 export const clickButtonByNameWithType = async (
   page: Page,
-  buttonName: ButtonName // string literal union type via type alias
+  buttonName: ButtonName = "Send Now!" // type alias ensures only allowed values. default is optional, remove '= "Send Now!"' if you don't want a default
 ) => {
   await page.getByRole("button", { name: buttonName, exact: true }).click();
 };
- ----------------- */
+*/
