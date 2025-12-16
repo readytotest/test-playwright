@@ -57,7 +57,7 @@ jobs:
         run: npx playwright test --config $PLAYWRIGHT_ACTIONS_DB_CONFIG
 
       - name: Upload Built-In HTML Report (Not Allure) to GitHub Actions Workflow Run Summary Page
-        uses: actions/upload-artifact@v5.0.0
+        uses: actions/upload-artifact@v6.0.0
         if: always()
         with:
           name: Built-in Playwright HTML Report Test Results
