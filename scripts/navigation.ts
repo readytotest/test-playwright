@@ -1,17 +1,12 @@
 /**********************************************
- * This setup is configured to test against   *
- * a local server in the GitHub runner        *
- * in a GitHub Actions workflow in the        *
- * primary repo. If you want to run the specs *
- * on your computer, you can change the      *
- * variable from localHost to production.     *
- * If you do want to run the tests against    *
- * a local environment, you will need to      *
- * clone the main repo, open both repos in    *
- * VSCode, start the server in the main repo, *
- * and then run the test.                     *
+ * URLs are hard-coded here for visibility on GitHub.
+ * You can switch this to use a playwright.env file with
+ * process.env to set these, but env files aren't
+ * uploaded to GitHub, so the URLs wouldn't be visible.
+ *
+ * This is set to test against a local server in GitHub Actions.
+ * To test the live site, replace `localHost` with `production` in `page.goto()`.
  **********************************************/
-
 import { Page } from "@playwright/test";
 
 const localHost = "http://localhost:3000";
