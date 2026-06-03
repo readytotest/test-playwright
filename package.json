@@ -40,9 +40,9 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-playwright": "^2.9.0",
     "eslint-plugin-prettier": "^5.5.5",
-    "harperdb": "^4.7.20",
+    "harperdb": "^4.7.22",
     "husky": "^9.1.7",
-    "lint-staged": "^16.3.2",
+    "lint-staged": "^16.3.3",
     "prettier": "^3.8.1",
     "typescript": "^5.9.2"
   }
