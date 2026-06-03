@@ -95,10 +95,10 @@ for (let i = 0; i <= 0; i++) {
       );
       // Click Send Now button
       await clickButtonByNameEnum(page, ButtonName.SendNow);
-      //Verify message sent successfully
-      await pageObjectHome.verifyFeedbackWidgetMessageSent(testData.feedbackWidgetData.confirmMessageSent, {
-        ignoreCase: true,
-      });
+      //Verify message sent successfully -- Removed the DSN so this wont work anymore
+      // await pageObjectHome.verifyFeedbackWidgetMessageSent(testData.feedbackWidgetData.confirmMessageSent, {
+      //   ignoreCase: true,
+      // });
     });
 
     test.afterEach(() => {
