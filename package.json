@@ -43,7 +43,7 @@
     "harperdb": "^4.7.22",
     "husky": "^9.1.7",
     "lint-staged": "^16.3.3",
-    "prettier": "^3.8.1",
+    "prettier": "^3.8.3",
     "typescript": "^5.9.2"
   }
 }
