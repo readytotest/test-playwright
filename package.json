@@ -42,7 +42,7 @@
     "eslint-plugin-playwright": "^2.10.4",
     "harperdb": "^4.7.22",
     "husky": "^9.1.7",
-    "lint-staged": "^16.3.3",
+    "lint-staged": "^17.0.7",
     "prettier": "^3.8.3",
     "typescript": "^5.9.2"
   }
