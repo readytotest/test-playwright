@@ -42,7 +42,7 @@
     "eslint-plugin-prettier": "^5.5.7",
     "harperdb": "^4.7.42",
     "husky": "^9.1.7",
-    "lint-staged": "^17.6.0",
+    "lint-staged": "^17.6.1",
     "prettier": "^3.10.1",
     "typescript": "~6.0.3"
   }
